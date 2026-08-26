@@ -1,6 +1,457 @@
 {
   "riyaziyyat": {
-    "7": [],
+    "7": [[
+  {
+    "id": "math7_001",
+    "topic": "Tam ədədlər",
+    "difficulty": "medium",
+    "question": "−8 + 15 − 6 ifadəsinin qiyməti neçədir?",
+    "answers": ["−1", "1", "7", "13"],
+    "correct": 1,
+    "explanation": "−8 + 15 = 7, 7 − 6 = 1."
+  },
+  {
+    "id": "math7_002",
+    "topic": "Tam ədədlər",
+    "difficulty": "medium",
+    "question": "−4(3−7) ifadəsinin qiyməti neçədir?",
+    "answers": ["−16", "−4", "12", "16"],
+    "correct": 3,
+    "explanation": "3−7=−4. −4·(−4)=16."
+  },
+  {
+    "id": "math7_003",
+    "topic": "Kəsrlər",
+    "difficulty": "medium",
+    "question": "3/4 + 5/8 cəmi neçədir?",
+    "answers": ["1", "11/8", "13/8", "15/8"],
+    "correct": 1,
+    "explanation": "3/4=6/8. 6/8+5/8=11/8."
+  },
+  {
+    "id": "math7_004",
+    "topic": "Kəsrlər",
+    "difficulty": "hard",
+    "question": "5/6 − 1/4 fərqi neçədir?",
+    "answers": ["1/2", "7/12", "2/3", "3/4"],
+    "correct": 1,
+    "explanation": "Ortaq məxrəc 12-dir: 10/12−3/12=7/12."
+  },
+  {
+    "id": "math7_005",
+    "topic": "Faiz",
+    "difficulty": "medium",
+    "question": "240 ədədinin 15%-i neçədir?",
+    "answers": ["24", "30", "36", "40"],
+    "correct": 2,
+    "explanation": "240·0,15=36."
+  },
+  {
+    "id": "math7_006",
+    "topic": "Faiz",
+    "difficulty": "hard",
+    "question": "Bir məhsulun qiyməti 20% artırılaraq 180 manat oldu. Əvvəlki qiymət neçə manat idi?",
+    "answers": ["140", "150", "160", "170"],
+    "correct": 1,
+    "explanation": "Əvvəlki qiymət x olsun. 1,2x=180 → x=150."
+  },
+  {
+    "id": "math7_007",
+    "topic": "Nisbət",
+    "difficulty": "medium",
+    "question": "3:5 nisbətində bölünmüş iki ədədin cəmi 64-dür. Kiçik ədəd neçədir?",
+    "answers": ["20", "24", "32", "40"],
+    "correct": 1,
+    "explanation": "3+5=8 pay. 64/8=8. Kiçik ədəd 3·8=24."
+  },
+  {
+    "id": "math7_008",
+    "topic": "Nisbət",
+    "difficulty": "hard",
+    "question": "x/12=5/8 olarsa, x neçədir?",
+    "answers": ["6", "7", "7,5", "8"],
+    "correct": 2,
+    "explanation": "x=12·5/8=60/8=7,5."
+  },
+  {
+    "id": "math7_009",
+    "topic": "Cəbri ifadələr",
+    "difficulty": "medium",
+    "question": "3x+5x−7 ifadəsi necə sadələşir?",
+    "answers": ["8x−7", "8x+7", "15x−7", "8x−5"],
+    "correct": 0,
+    "explanation": "Eyni hədləri toplayırıq: 3x+5x=8x."
+  },
+  {
+    "id": "math7_010",
+    "topic": "Cəbri ifadələr",
+    "difficulty": "hard",
+    "question": "2(3x−4)−(x+5) ifadəsi necə sadələşir?",
+    "answers": ["5x−3", "5x−13", "7x−3", "7x−13"],
+    "correct": 1,
+    "explanation": "6x−8−x−5=5x−13."
+  },
+  {
+    "id": "math7_011",
+    "topic": "Tənliklər",
+    "difficulty": "medium",
+    "question": "3x+7=25 tənliyinin həlli neçədir?",
+    "answers": ["5", "6", "7", "8"],
+    "correct": 1,
+    "explanation": "3x=18 → x=6."
+  },
+  {
+    "id": "math7_012",
+    "topic": "Tənliklər",
+    "difficulty": "hard",
+    "question": "5x−8=2x+13 tənliyinin həlli neçədir?",
+    "answers": ["5", "6", "7", "8"],
+    "correct": 2,
+    "explanation": "3x=21 → x=7."
+  },
+  {
+    "id": "math7_013",
+    "topic": "Tənliklər",
+    "difficulty": "hard",
+    "question": "2(x−3)+5=17 tənliyinin həlli neçədir?",
+    "answers": ["6", "8", "9", "10"],
+    "correct": 2,
+    "explanation": "2x−6+5=17 → 2x=18 → x=9."
+  },
+  {
+    "id": "math7_014",
+    "topic": "Bərabərsizliklər",
+    "difficulty": "medium",
+    "question": "2x+3<11 bərabərsizliyinin həlli hansıdır?",
+    "answers": ["x<3", "x<4", "x>4", "x>3"],
+    "correct": 1,
+    "explanation": "2x<8 → x<4."
+  },
+  {
+    "id": "math7_015",
+    "topic": "Bərabərsizliklər",
+    "difficulty": "hard",
+    "question": "5−2x≥11 bərabərsizliyinin həlli hansıdır?",
+    "answers": ["x≥−3", "x≤−3", "x≥3", "x≤3"],
+    "correct": 1,
+    "explanation": "−2x≥6. Mənfi ədədə bölərkən işarə dəyişir: x≤−3."
+  },
+  {
+    "id": "math7_016",
+    "topic": "Üstlü ifadələr",
+    "difficulty": "medium",
+    "question": "2⁵ neçədir?",
+    "answers": ["10", "16", "25", "32"],
+    "correct": 3,
+    "explanation": "2·2·2·2·2=32."
+  },
+  {
+    "id": "math7_017",
+    "topic": "Üstlü ifadələr",
+    "difficulty": "hard",
+    "question": "3²·3³ ifadəsi neçədir?",
+    "answers": ["81", "243", "729", "27"],
+    "correct": 1,
+    "explanation": "Eyni əsaslı qüvvətlər vurulduqda üstlər toplanır: 3⁵=243."
+  },
+  {
+    "id": "math7_018",
+    "topic": "Köklər",
+    "difficulty": "medium",
+    "question": "√144 neçədir?",
+    "answers": ["10", "11", "12", "14"],
+    "correct": 2,
+    "explanation": "12²=144."
+  },
+  {
+    "id": "math7_019",
+    "topic": "Köklər",
+    "difficulty": "hard",
+    "question": "√50 ifadəsinin sadələşdirilmiş forması hansıdır?",
+    "answers": ["2√5", "5√2", "10√2", "25√2"],
+    "correct": 1,
+    "explanation": "√50=√(25·2)=5√2."
+  },
+  {
+    "id": "math7_020",
+    "topic": "Həndəsə",
+    "difficulty": "medium",
+    "question": "Düzbucaqlının tərəfləri 7 sm və 9 sm-dir. Sahəsi neçədir?",
+    "answers": ["16", "32", "63", "72"],
+    "correct": 2,
+    "explanation": "S=7·9=63 sm²."
+  },
+  {
+    "id": "math7_021",
+    "topic": "Həndəsə",
+    "difficulty": "medium",
+    "question": "Tərəfi 8 sm olan kvadratın perimetri neçədir?",
+    "answers": ["16", "24", "32", "64"],
+    "correct": 2,
+    "explanation": "P=4·8=32 sm."
+  },
+  {
+    "id": "math7_022",
+    "topic": "Həndəsə",
+    "difficulty": "hard",
+    "question": "Düzbucaqlının sahəsi 96 sm², eni 8 sm-dir. Uzunluğu neçədir?",
+    "answers": ["10", "12", "14", "16"],
+    "correct": 1,
+    "explanation": "Uzunluq=96/8=12 sm."
+  },
+  {
+    "id": "math7_023",
+    "topic": "Üçbucaq",
+    "difficulty": "medium",
+    "question": "Üçbucağın iki bucağı 45° və 65°-dir. Üçüncü bucaq neçədir?",
+    "answers": ["60°", "70°", "80°", "90°"],
+    "correct": 1,
+    "explanation": "180−45−65=70°."
+  },
+  {
+    "id": "math7_024",
+    "topic": "Üçbucaq",
+    "difficulty": "hard",
+    "question": "Bərabəryanlı üçbucaqda təpə bucağı 40°-dirsə, oturacaq bucaqlarının hər biri neçədir?",
+    "answers": ["60°", "65°", "70°", "80°"],
+    "correct": 2,
+    "explanation": "Qalan iki bucaq bərabərdir: (180−40)/2=70°."
+  },
+  {
+    "id": "math7_025",
+    "topic": "Çevrə",
+    "difficulty": "medium",
+    "question": "Radiusu 5 sm olan çevrənin diametri neçədir?",
+    "answers": ["2,5", "5", "10", "25"],
+    "correct": 2,
+    "explanation": "Diametr radiusun iki qatıdır: d=2r=10 sm."
+  },
+  {
+    "id": "math7_026",
+    "topic": "Miqyas",
+    "difficulty": "hard",
+    "question": "Xəritədə 1 sm gerçəklikdə 5 km-ə uyğundur. 7 sm məsafə gerçəklikdə neçə km-dir?",
+    "answers": ["25", "30", "35", "40"],
+    "correct": 2,
+    "explanation": "7·5=35 km."
+  },
+  {
+    "id": "math7_027",
+    "topic": "Orta qiymət",
+    "difficulty": "medium",
+    "question": "8, 12, 15 və 5 ədədlərinin ədədi ortası neçədir?",
+    "answers": ["8", "9", "10", "11"],
+    "correct": 2,
+    "explanation": "(8+12+15+5)/4=40/4=10."
+  },
+  {
+    "id": "math7_028",
+    "topic": "Orta qiymət",
+    "difficulty": "hard",
+    "question": "Üç ədədin ədədi ortası 18-dir. İki ədəd 14 və 20-dirsə, üçüncü ədəd neçədir?",
+    "answers": ["18", "20", "22", "24"],
+    "correct": 2,
+    "explanation": "Cəm 54-dür. Üçüncü ədəd 54−14−20=20. Düzgün cavab 20-dir.",
+  },
+  {
+    "id": "math7_029",
+    "topic": "Ehtimal",
+    "difficulty": "medium",
+    "question": "Adi zər atıldıqda 5 gəlmə ehtimalı neçədir?",
+    "answers": ["1/2", "1/3", "1/5", "1/6"],
+    "correct": 3,
+    "explanation": "6 mümkün nəticədən yalnız biri 5-dir: 1/6."
+  },
+  {
+    "id": "math7_030",
+    "topic": "Ehtimal",
+    "difficulty": "hard",
+    "question": "Torbadakı 3 qırmızı və 2 mavi kürədən təsadüfi biri seçilir. Mavi kürə seçilmə ehtimalı neçədir?",
+    "answers": ["1/5", "2/5", "3/5", "1/2"],
+    "correct": 1,
+    "explanation": "2 mavi kürə, ümumilikdə 5 kürə var: 2/5."
+  },
+  {
+    "id": "math7_031",
+    "topic": "Məntiq",
+    "difficulty": "hard",
+    "question": "Ardıcıl üç natural ədədin cəmi 48-dir. Ən böyük ədəd neçədir?",
+    "answers": ["15", "16", "17", "18"],
+    "correct": 2,
+    "explanation": "Orta ədəd 48/3=16-dır. Ən böyük ədəd 17-dir."
+  },
+  {
+    "id": "math7_032",
+    "topic": "Məntiq",
+    "difficulty": "hard",
+    "question": "Bir ədədin 3 mislinə 7 əlavə etdikdə 31 alınır. Ədəd neçədir?",
+    "answers": ["6", "7", "8", "9"],
+    "correct": 2,
+    "explanation": "3x+7=31 → 3x=24 → x=8."
+  },
+  {
+    "id": "math7_033",
+    "topic": "Onluq kəsrlər",
+    "difficulty": "medium",
+    "question": "2,75+1,6 neçədir?",
+    "answers": ["4,15", "4,25", "4,35", "4,45"],
+    "correct": 2,
+    "explanation": "2,75+1,60=4,35."
+  },
+  {
+    "id": "math7_034",
+    "topic": "Onluq kəsrlər",
+    "difficulty": "hard",
+    "question": "6,4·0,25 hasilinin qiyməti neçədir?",
+    "answers": ["1,2", "1,4", "1,6", "2,4"],
+    "correct": 2,
+    "explanation": "0,25=1/4 olduğuna görə 6,4/4=1,6."
+  },
+  {
+    "id": "math7_035",
+    "topic": "Onluq kəsrlər",
+    "difficulty": "hard",
+    "question": "7,2:0,6 bölməsinin qiyməti neçədir?",
+    "answers": ["10", "12", "14", "16"],
+    "correct": 1,
+    "explanation": "7,2/0,6=72/6=12."
+  },
+  {
+    "id": "math7_036",
+    "topic": "Mənfi ədədlər",
+    "difficulty": "hard",
+    "question": |"−3² ifadəsinin qiyməti neçədir?",
+    "answers": ["−9", "9", "−6", "6"],
+    "correct": 0,
+    "explanation": "Əvvəl qüvvət hesablanır: −3²=−(3²)=−9."
+  },
+  {
+    "id": "math7_037",
+    "topic": "Modul",
+    "difficulty": "medium",
+    "question": "|−17|−|5| ifadəsinin qiyməti neçədir?",
+    "answers": ["−12", "12", "22", "−22"],
+    "correct": 1,
+    "explanation": "|−17|=17 və |5|=5. 17−5=12."
+  },
+  {
+    "id": "math7_038",
+    "topic": "Tənliklər",
+    "difficulty": "hard",
+    "question": "(x+4)/3=6 tənliyinin həlli neçədir?",
+    "answers": ["10", "12", "14", "18"],
+    "correct": 2,
+    "explanation": "x+4=18 → x=14."
+  },
+  {
+    "id": "math7_039",
+    "topic": "Nisbət",
+    "difficulty": "hard",
+    "question": "4 işçi bir işi 12 günə görür. Eyni sürətlə 8 işçi həmin işi neçə günə görər?",
+    "answers": ["3", "6", "8", "10"],
+    "correct": 1,
+    "explanation": "İşçi sayı iki dəfə artdığı üçün vaxt iki dəfə azalır: 12/2=6 gün."
+  },
+  {
+    "id": "math7_040",
+    "topic": "Faiz",
+    "difficulty": "hard",
+    "question": "Bir ədəd 25% azaldıldıqda 90 alınır. Əvvəlki ədəd neçədir?",
+    "answers": ["110", "115", "120", "125"],
+    "correct": 2,
+    "explanation": "Ədədin 75%-i 90-dır: 0,75x=90 → x=120."
+  },
+  {
+    "id": "math7_041",
+    "topic": "Cəbri ifadələr",
+    "difficulty": "hard",
+    "question": "x=−2 olduqda 2x²−3x+1 ifadəsinin qiyməti neçədir?",
+    "answers": ["7", "11", "15", "17"],
+    "correct": 2,
+    "explanation": "2·4−3(−2)+1=8+6+1=15."
+  },
+  {
+    "id": "math7_042",
+    "topic": "Məntiq",
+    "difficulty": "expert",
+    "question": "Bir ədədin yarısı ilə üçdə birinin cəmi 25-dir. Bu ədəd neçədir?",
+    "answers": ["24", "30", "36", "42"],
+    "correct": 2,
+    "explanation": "x/2+x/3=25 → 5x/6=25 → x=30. Düzgün cavab 30-dur."
+  },
+  {
+    "id": "math7_043",
+    "topic": "Həndəsə",
+    "difficulty": "hard",
+    "question": "Düzbucaqlının perimetri 34 sm, uzunluğu 10 sm-dir. Eni neçədir?",
+    "answers": ["5", "6", "7", "8"],
+    "correct": 2,
+    "explanation": "2(10+x)=34 → 10+x=17 → x=7."
+  },
+  {
+    "id": "math7_044",
+    "topic": "Həndəsə",
+    "difficulty": "expert",
+    "question": "Kvadratın sahəsi 144 sm²-dir. Onun perimetri neçədir?",
+    "answers": ["24", "36", "48", "56"],
+    "correct": 2,
+    "explanation": "Tərəf √144=12 sm. P=4·12=48 sm."
+  },
+  {
+    "id": "math7_045",
+    "topic": "Üçbucaq",
+    "difficulty": "expert",
+    "question": "Üçbucağın tərəfləri 5 sm, 7 sm və x sm-dir. x-in tam ədəd kimi ala biləcəyi ən böyük qiymət neçədir?",
+    "answers": ["10", "11", "12", "13"],
+    "correct": 1,
+    "explanation": "Üçbucaq bərabərsizliyinə görə x<5+7=12. Ən böyük tam qiymət 11-dir."
+  },
+  {
+    "id": "math7_046",
+    "topic": "Ədədi ardıcıllıqlar",
+    "difficulty": "hard",
+    "question": "4, 9, 14, 19, ... ardıcıllığında növbəti ədəd neçədir?",
+    "answers": ["22", "23", "24", "25"],
+    "correct": 2,
+    "explanation": "Hər dəfə 5 artır: 19+5=24."
+  },
+  {
+    "id": "math7_047",
+    "topic": "Ədədi ardıcıllıqlar",
+    "difficulty": "expert",
+    "question": "2, 6, 12, 20, 30, ... ardıcıllığında növbəti ədəd neçədir?",
+    "answers": ["36", "40", "42", "44"],
+    "correct": 2,
+    "explanation": "Fərqlər 4,6,8,10 şəklində artır. Növbəti fərq 12-dir: 30+12=42."
+  },
+  {
+    "id": "math7_048",
+    "topic": "Məntiq",
+    "difficulty": "expert",
+    "question": "Bir kitabın səhifələrinin nömrələnməsində 1-dən 9-a qədər neçə rəqəm istifadə olunur?",
+    "answers": ["9", "10", "18", "20"],
+    "correct": 0,
+    "explanation": "1-dən 9-a qədər 9 səhifə və hərəsində bir rəqəm var: 9 rəqəm."
+  },
+  {
+    "id": "math7_049",
+    "topic": "Məntiq",
+    "difficulty": "expert",
+    "question": "İki ardıcıl cüt natural ədədin cəmi 46-dır. Böyük ədəd neçədir?",
+    "answers": ["22", "24", "26", "28"],
+    "correct": 1,
+    "explanation": "Ədədlər x və x+2-dir. 2x+2=46 → x=22. Böyük ədəd 24-dür."
+  },
+  {
+    "id": "math7_050",
+    "topic": "Qarışıq",
+    "difficulty": "expert",
+    "question": "Bir düzbucaqlının uzunluğu enindən 4 sm böyükdür. Sahəsi 96 sm²-dirsə, tərəfləri neçə sm-dir?",
+    "answers": ["6 və 10", "8 və 12", "10 və 14", "12 və 16"],
+    "correct": 1,
+    "explanation": "En x, uzunluq x+4 olsun. x(x+4)=96 → x²+4x−96=0 → x=8. Uzunluq 12-dir."
+  }
+    ]],
     "8": [],
     "9": [],
     "10": [],
