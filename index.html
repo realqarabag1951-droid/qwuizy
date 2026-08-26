@@ -30,6 +30,11 @@ body{
     #080817;
 }
 
+.container{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
 /* HEADER */
 
 header{
@@ -43,11 +48,6 @@ header{
   position:sticky;
   top:0;
   z-index:100;
-}
-
-.container{
-  width:min(1100px,92%);
-  margin:auto;
 }
 
 .nav{
@@ -407,26 +407,6 @@ header{
   margin:20px 0;
 }
 
-.explanation{
-  margin-top:18px;
-
-  padding:16px;
-
-  border-radius:14px;
-
-  background:
-    rgba(34,211,238,.08);
-
-  border:
-    1px solid rgba(34,211,238,.18);
-
-  color:#cbd5e1;
-
-  line-height:1.6;
-
-  font-size:14px;
-}
-
 /* RESULT */
 
 .result{
@@ -488,10 +468,6 @@ header{
   font-weight:bold;
 
   font-size:14px;
-}
-
-.primary:hover{
-  transform:translateY(-2px);
 }
 
 /* CHALLENGE */
@@ -577,15 +553,6 @@ footer{
     1px solid rgba(255,255,255,.1);
 
   font-weight:bold;
-
-  transition:.2s;
-}
-
-.tiktok:hover{
-  transform:translateY(-2px);
-
-  background:
-    rgba(255,255,255,.11);
 }
 
 /* MOBILE */
@@ -693,8 +660,6 @@ Testə başlamaq üçün bir fənn seç.
 <div class="subjects">
 
 
-<!-- MATH -->
-
 <div
 class="card math"
 onclick="selectSubject('riyaziyyat')"
@@ -720,8 +685,6 @@ TESTƏ BAŞLA →
 
 
 
-<!-- PHYSICS -->
-
 <div
 class="card physics"
 onclick="selectSubject('fizika')"
@@ -746,8 +709,6 @@ TESTƏ BAŞLA →
 </div>
 
 
-
-<!-- ENGLISH -->
 
 <div
 class="card english"
@@ -884,7 +845,6 @@ id="quiz"
 class="panel hidden"
 >
 
-
 <div class="quiz-top">
 
 <div
@@ -927,14 +887,6 @@ id="answers"
 class="options"
 >
 </div>
-
-
-<div
-id="explanation"
-class="explanation hidden"
->
-</div>
-
 
 </div>
 
@@ -1021,9 +973,11 @@ rel="noopener noreferrer"
 
 
 /* ==========================================
-   QWUİZY DATA
+   QWUİZY
 ========================================== */
 
+
+/* DATA */
 
 let questions = {};
 
@@ -1068,11 +1022,10 @@ document.getElementById("xp")
 
 
 /* ==========================================
-   LOAD QUESTIONS
+   QUESTIONS.JSON YÜKLƏ
 ========================================== */
 
-
-fetch("questions.json")
+fetch("./questions.json")
 
 .then(response => {
 
@@ -1093,17 +1046,21 @@ return response.json();
 questions = data;
 
 console.log(
-"Qwuizy sual bazası yükləndi."
+"Qwuizy sual bazası uğurla yükləndi:",
+questions
 );
 
 })
 
 .catch(error => {
 
-console.error(error);
+console.error(
+"SUALLAR YÜKLƏNMƏDI:",
+error
+);
 
 alert(
-"⚠️ Sual bazası yüklənmədi. questions.json faylını yoxla."
+"⚠️ Sual bazası yüklənmədi!\n\nGitHub-da questions.json faylının olduğuna əmin ol."
 );
 
 });
@@ -1114,16 +1071,13 @@ alert(
    SUBJECT
 ========================================== */
 
-
 function selectSubject(selected){
 
 subject = selected;
 
-
 document.getElementById(
 "home"
 ).classList.add("hidden");
-
 
 document.getElementById(
 "selection"
@@ -1163,13 +1117,18 @@ behavior:"smooth"
    CLASS
 ========================================== */
 
-
 function selectClass(level){
 
-classLevel = level;
+classLevel = String(level);
 
-alert(
-"🎓 11-ci sinif seçildi!\n\nİndi çətinlik səviyyəsini seç."
+console.log(
+"Seçilmiş sinif:",
+classLevel
+);
+
+console.log(
+"Seçilmiş fənn:",
+subject
 );
 
 }
@@ -1177,9 +1136,8 @@ alert(
 
 
 /* ==========================================
-   SEEN QUESTIONS KEY
+   SEEN KEY
 ========================================== */
-
 
 function getSeenKey(){
 
@@ -1194,9 +1152,8 @@ classLevel
 
 
 /* ==========================================
-   GET AVAILABLE QUESTIONS
+   AVAILABLE QUESTIONS
 ========================================== */
-
 
 function getAvailableQuestions(bank){
 
@@ -1216,9 +1173,8 @@ q => !seen.includes(q.id)
 
 
 /* ==========================================
-   SAVE QUESTION AS SEEN
+   SAVE SEEN QUESTION
 ========================================== */
-
 
 function saveQuestionAsSeen(q){
 
@@ -1234,8 +1190,7 @@ seenQuestions[key] = [];
 
 
 if(
-!seenQuestions[key]
-.includes(q.id)
+!seenQuestions[key].includes(q.id)
 ){
 
 seenQuestions[key].push(q.id);
@@ -1258,19 +1213,57 @@ seenQuestions
    START TEST
 ========================================== */
 
-
 function startTest(level){
 
 difficulty = level;
 
 
+/* SINIF */
+
+classLevel =
+String(
+classLevel || "11"
+);
+
+
+console.log(
+"Fənn:",
+subject
+);
+
+console.log(
+"Sinif:",
+classLevel
+);
+
+console.log(
+"Çətinlik:",
+difficulty
+);
+
+
+/* SUAL BAZASINI YOXLA */
+
 if(
-!questions[subject] ||
+!questions ||
+!questions[subject]
+){
+
+alert(
+"⚠️ Bu fənnin sual bazası tapılmadı."
+);
+
+return;
+
+}
+
+
+if(
 !questions[subject][classLevel]
 ){
 
 alert(
-"Bu sinif üçün hələ sual yoxdur."
+"⚠️ Bu sinif üçün hələ sual yoxdur."
 );
 
 return;
@@ -1282,15 +1275,17 @@ let bank =
 questions[subject][classLevel];
 
 
-/* ƏVVƏL GÖRÜLMƏMİŞ */
+/* GÖRÜLMƏMİŞ SUALLAR */
 
 let available =
 getAvailableQuestions(bank);
 
 
-/* BÜTÜN SUALLAR BİTİBSƏ */
+/* HAMISI BİTİBSƏ */
 
-if(available.length === 0){
+if(
+available.length === 0
+){
 
 alert(
 "🎉 Təbriklər!\n\nBu bölmədəki bütün sualları artıq həll etmisən!"
@@ -1301,7 +1296,7 @@ return;
 }
 
 
-/* DIFFICULTY FILTER */
+/* ÇƏTİNLİYƏ GÖRƏ */
 
 let filtered =
 available.filter(
@@ -1310,32 +1305,37 @@ q.difficulty === difficulty
 );
 
 
-/* Əgər seçilmiş çətinlikdə
-15 sual yoxdursa,
-digər görülməmiş suallardan istifadə et */
+/* 15 DƏNƏ YOXDURSA
+BAŞQA GÖRÜLMƏMİŞ SUALLAR */
 
-if(filtered.length < 15){
+if(
+filtered.length < 15
+){
 
 filtered = available;
 
 }
 
 
-/* RANDOM SHUFFLE */
+/* RANDOM */
 
 filtered =
 [...filtered];
 
 
 for(
-let i=filtered.length-1;
-i>0;
+let i =
+filtered.length - 1;
+
+i > 0;
+
 i--
 ){
 
 let j =
 Math.floor(
-Math.random()*(i+1)
+Math.random() *
+(i + 1)
 );
 
 
@@ -1354,24 +1354,31 @@ filtered[i]
 /* 15 SUAL */
 
 testQuestions =
-filtered.slice(0,15);
+filtered.slice(
+0,
+15
+);
 
 
-/* TEST BAŞLAYIR */
+/* BAŞLA */
 
 currentQuestion = 0;
 
 score = 0;
 
 
+/* EKRAN */
+
 document.getElementById(
 "selection"
-).classList.add("hidden");
+)
+.classList.add("hidden");
 
 
 document.getElementById(
 "quiz"
-).classList.remove("hidden");
+)
+.classList.remove("hidden");
 
 
 window.scrollTo({
@@ -1389,7 +1396,6 @@ showQuestion();
 /* ==========================================
    SHOW QUESTION
 ========================================== */
-
 
 function showQuestion(){
 
@@ -1431,7 +1437,9 @@ timeLeft +
 "s";
 
 
-if(timeLeft <= 30){
+if(
+timeLeft <= 30
+){
 
 timer.classList.add(
 "danger"
@@ -1440,7 +1448,9 @@ timer.classList.add(
 }
 
 
-if(timeLeft <= 0){
+if(
+timeLeft <= 0
+){
 
 clearInterval(
 timerInterval
@@ -1465,7 +1475,7 @@ document.getElementById(
 "questionNumber"
 )
 .textContent =
-`${currentQuestion+1} / ${testQuestions.length}`;
+`${currentQuestion + 1} / ${testQuestions.length}`;
 
 
 document.getElementById(
@@ -1473,9 +1483,9 @@ document.getElementById(
 )
 .style.width =
 `${(
-(currentQuestion) /
+currentQuestion /
 testQuestions.length
-)*100}%`;
+) * 100}%`;
 
 
 document.getElementById(
@@ -1483,14 +1493,6 @@ document.getElementById(
 )
 .textContent =
 q.question;
-
-
-document.getElementById(
-"explanation"
-)
-.classList.add(
-"hidden"
-);
 
 
 let answers =
@@ -1521,7 +1523,9 @@ answer;
 
 
 button.onclick =
-()=>nextQuestion(index);
+()=>{
+nextQuestion(index);
+};
 
 
 answers.appendChild(
@@ -1538,7 +1542,6 @@ button
    NEXT QUESTION
 ========================================== */
 
-
 function nextQuestion(answer){
 
 clearInterval(
@@ -1552,7 +1555,7 @@ currentQuestion
 ];
 
 
-/* SUAL ARTIQ GÖRÜLDÜ */
+/* YADDA SAXLA */
 
 saveQuestionAsSeen(q);
 
@@ -1577,13 +1580,18 @@ xp
 document.getElementById(
 "xp"
 )
-.textContent = xp;
+.textContent =
+xp;
 
 }
 
 
+/* NÖVBƏTİ */
+
 currentQuestion++;
 
+
+/* TEST BİTDİ */
 
 if(
 currentQuestion >=
@@ -1597,6 +1605,8 @@ return;
 }
 
 
+/* YENİ SUAL */
+
 showQuestion();
 
 }
@@ -1606,7 +1616,6 @@ showQuestion();
 /* ==========================================
    FINISH TEST
 ========================================== */
-
 
 function finishTest(){
 
@@ -1640,31 +1649,40 @@ testQuestions.length;
 
 let percent =
 Math.round(
-(score/total)*100
+(score / total) * 100
 );
 
 
 let message;
 
 
-if(percent >= 90){
+if(
+percent >= 90
+){
 
 message =
 "🔥 Möhtəşəm nəticə! Sən həqiqətən güclüsən.";
 
 }
-else if(percent >= 70){
+
+else if(
+percent >= 70
+){
 
 message =
 "💪 Çox yaxşı! Bir az da məşq et və daha yüksək nəticə al.";
 
 }
-else if(percent >= 50){
+
+else if(
+percent >= 50
+){
 
 message =
-"📈 Pis deyil! Daha çox məşq etsən nəticən sürətlə artacaq.";
+"📈 Pis deyil! Daha çox məşq etsən nəticən artacaq.";
 
 }
+
 else{
 
 message =
@@ -1677,7 +1695,7 @@ document.getElementById(
 "resultText"
 )
 .textContent =
-`${message} ${score*10} XP qazandın!`;
+`${message} ${score * 10} XP qazandın!`;
 
 
 window.scrollTo({
@@ -1692,7 +1710,6 @@ behavior:"smooth"
 /* ==========================================
    HOME
 ========================================== */
-
 
 function goHome(){
 
@@ -1736,4 +1753,4 @@ behavior:"smooth"
 </script>
 
 </body>
-  </html>
+</html>
