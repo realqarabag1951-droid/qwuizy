@@ -1,22 +1,28 @@
-<!-- QWUİZY V2 -->
 <!DOCTYPE html>
 <html lang="az">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Qwuizy — Biliyini oyuna çevir</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
   color:#fff;
   min-height:100vh;
+
   background:
     radial-gradient(circle at 10% 10%,#6d28d9 0%,transparent 30%),
     radial-gradient(circle at 90% 15%,#0891b2 0%,transparent 28%),
@@ -24,15 +30,24 @@ body{
     #080817;
 }
 
+/* HEADER */
+
+header{
+  padding:20px 0;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.1);
+
+  backdrop-filter:blur(18px);
+
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
 .container{
   width:min(1100px,92%);
   margin:auto;
-}
-
-header{
-  padding:22px 0;
-  border-bottom:1px solid rgba(255,255,255,.1);
-  backdrop-filter:blur(15px);
 }
 
 .nav{
@@ -44,43 +59,83 @@ header{
 .logo{
   font-size:27px;
   font-weight:900;
-  background:linear-gradient(90deg,#22d3ee,#a78bfa,#f472b6);
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #a78bfa,
+      #f472b6
+    );
+
   -webkit-background-clip:text;
+  background-clip:text;
+
   color:transparent;
 }
 
 .profile{
   padding:10px 15px;
-  border-radius:12px;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.1);
+
+  border-radius:13px;
+
+  background:
+    rgba(255,255,255,.07);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  font-weight:bold;
 }
+
+/* HERO */
 
 .hero{
   text-align:center;
-  padding:70px 0 50px;
+  padding:75px 0 55px;
 }
 
 .hero h1{
-  font-size:clamp(45px,8vw,80px);
+  font-size:clamp(48px,9vw,85px);
+
   font-weight:900;
+
   line-height:.95;
-  letter-spacing:-4px;
-  background:linear-gradient(100deg,#fff,#a78bfa,#67e8f9,#f9a8d4);
+
+  letter-spacing:-5px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #fff,
+      #a78bfa,
+      #67e8f9,
+      #f9a8d4
+    );
+
   -webkit-background-clip:text;
+  background-clip:text;
+
   color:transparent;
 }
 
 .hero p{
   color:#aaa9c8;
+
   max-width:650px;
-  margin:22px auto;
-  line-height:1.6;
+
+  margin:24px auto;
+
+  line-height:1.7;
+
+  font-size:16px;
 }
+
+/* SECTION */
 
 .section-title{
   text-align:center;
-  margin-bottom:25px;
+  margin-bottom:28px;
 }
 
 .section-title h2{
@@ -89,275 +144,730 @@ header{
 
 .section-title p{
   color:#aaa9c8;
-  margin-top:7px;
+  margin-top:8px;
 }
+
+/* SUBJECTS */
 
 .subjects{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:18px;
 }
 
 .card{
   padding:25px;
-  min-height:180px;
-  border-radius:22px;
-  background:rgba(20,20,42,.8);
-  border:1px solid rgba(255,255,255,.1);
+
+  min-height:185px;
+
+  border-radius:23px;
+
+  background:
+    rgba(20,20,42,.82);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
   cursor:pointer;
-  transition:.2s;
+
+  transition:
+    transform .2s,
+    border-color .2s,
+    box-shadow .2s;
+
+  position:relative;
+  overflow:hidden;
 }
 
 .card:hover{
   transform:translateY(-6px);
-  border-color:rgba(255,255,255,.25);
+
+  border-color:
+    rgba(255,255,255,.3);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.3);
+}
+
+.card:after{
+  content:"";
+
+  position:absolute;
+
+  width:130px;
+  height:130px;
+
+  border-radius:50%;
+
+  right:-50px;
+  bottom:-55px;
+
+  filter:blur(10px);
+
+  opacity:.4;
+}
+
+.math:after{
+  background:#22d3ee;
+}
+
+.physics:after{
+  background:#8b5cf6;
+}
+
+.english:after{
+  background:#ec4899;
 }
 
 .icon{
-  font-size:35px;
-  margin-bottom:15px;
+  font-size:38px;
+  margin-bottom:17px;
 }
 
 .card h3{
-  font-size:19px;
+  font-size:20px;
   margin-bottom:8px;
 }
 
 .card p{
   color:#aaa9c8;
   font-size:13px;
-  line-height:1.5;
+  line-height:1.6;
 }
 
-.card button{
-  margin-top:15px;
-  border:0;
-  color:#fff;
-  background:linear-gradient(90deg,#7c3aed,#ec4899);
-  padding:10px 14px;
-  border-radius:10px;
+.card-label{
+  margin-top:17px;
+
+  color:#67e8f9;
+
+  font-size:12px;
+
   font-weight:bold;
-  cursor:pointer;
+}
+
+/* PANELS */
+
+.panel{
+  width:min(720px,92%);
+
+  margin:35px auto;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  background:
+    rgba(17,17,35,.94);
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+    0 25px 80px
+    rgba(0,0,0,.25);
 }
 
 .hidden{
-  display:none!important;
-}
-
-.panel{
-  width:min(700px,92%);
-  margin:30px auto;
-  padding:30px;
-  border-radius:25px;
-  background:rgba(17,17,35,.9);
-  border:1px solid rgba(255,255,255,.12);
+  display:none !important;
 }
 
 .back{
-  color:#aaa9c8;
-  cursor:pointer;
-  margin-bottom:20px;
   display:inline-block;
+
+  color:#aaa9c8;
+
+  cursor:pointer;
+
+  margin-bottom:20px;
 }
+
+.back:hover{
+  color:white;
+}
+
+.panel h2{
+  font-size:28px;
+}
+
+/* OPTIONS */
 
 .options{
   display:grid;
+
   gap:12px;
-  margin-top:20px;
+
+  margin-top:18px;
 }
 
 .option{
   padding:16px;
+
   border-radius:14px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
   color:white;
+
   cursor:pointer;
+
   text-align:left;
+
   font-weight:bold;
+
+  transition:.2s;
 }
 
 .option:hover{
-  background:rgba(124,58,237,.2);
-  border-color:#8b5cf6;
+  background:
+    rgba(124,58,237,.2);
+
+  border-color:
+    #8b5cf6;
+
+  transform:translateX(3px);
 }
 
-.question{
-  font-size:22px;
-  line-height:1.5;
-  margin:25px 0;
+/* QUIZ */
+
+.quiz-top{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-bottom:12px;
 }
 
-.progress{
-  height:8px;
-  background:rgba(255,255,255,.1);
-  border-radius:20px;
-  overflow:hidden;
-}
+.question-number{
+  color:#aaa9c8;
 
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,#22d3ee,#8b5cf6,#ec4899);
-  transition:.3s;
+  font-weight:bold;
 }
 
 .timer{
   color:#67e8f9;
+
   font-weight:bold;
-  margin-top:12px;
 }
+
+.timer.danger{
+  color:#fb7185;
+}
+
+.progress{
+  width:100%;
+
+  height:8px;
+
+  background:
+    rgba(255,255,255,.1);
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  margin-bottom:25px;
+}
+
+.progress-bar{
+  height:100%;
+
+  width:0%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #8b5cf6,
+      #ec4899
+    );
+
+  transition:.3s;
+}
+
+.question{
+  font-size:22px;
+
+  font-weight:bold;
+
+  line-height:1.55;
+
+  margin:20px 0;
+}
+
+.explanation{
+  margin-top:18px;
+
+  padding:16px;
+
+  border-radius:14px;
+
+  background:
+    rgba(34,211,238,.08);
+
+  border:
+    1px solid rgba(34,211,238,.18);
+
+  color:#cbd5e1;
+
+  line-height:1.6;
+
+  font-size:14px;
+}
+
+/* RESULT */
 
 .result{
   text-align:center;
 }
 
-.score{
+.result-icon{
   font-size:55px;
+}
+
+.score{
+  font-size:60px;
+
   font-weight:900;
-  margin:20px;
-  background:linear-gradient(90deg,#22d3ee,#a78bfa,#f472b6);
+
+  margin:15px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #a78bfa,
+      #f472b6
+    );
+
   -webkit-background-clip:text;
+
   color:transparent;
+}
+
+.result p{
+  color:#aaa9c8;
+
+  line-height:1.6;
 }
 
 .primary{
   display:inline-block;
-  margin-top:20px;
-  padding:14px 20px;
+
+  margin-top:22px;
+
+  padding:14px 21px;
+
   border-radius:13px;
-  background:linear-gradient(90deg,#7c3aed,#ec4899);
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #ec4899
+    );
+
   color:white;
+
   border:0;
+
   cursor:pointer;
+
   font-weight:bold;
+
+  font-size:14px;
 }
+
+.primary:hover{
+  transform:translateY(-2px);
+}
+
+/* CHALLENGE */
+
+.challenge{
+  margin-top:70px;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(34,211,238,.10),
+      rgba(139,92,246,.13),
+      rgba(236,72,153,.1)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.1);
+}
+
+.challenge h2{
+  margin-bottom:10px;
+}
+
+.challenge p{
+  color:#aaa9c8;
+  line-height:1.6;
+}
+
+/* FOOTER */
 
 footer{
   margin-top:80px;
-  padding:35px 0;
-  border-top:1px solid rgba(255,255,255,.1);
+
+  padding:38px 0;
+
+  border-top:
+    1px solid rgba(255,255,255,.1);
 }
 
 .footer{
   display:flex;
-  justify-content:space-between;
-  gap:20px;
+
+  justify-content:
+    space-between;
+
   align-items:center;
+
+  gap:20px;
+}
+
+.footer-brand{
+  font-size:20px;
+  font-weight:900;
+}
+
+.footer-note{
+  color:#aaa9c8;
+
+  font-size:12px;
+
+  margin-top:7px;
 }
 
 .tiktok{
   color:white;
+
   text-decoration:none;
-  padding:12px 15px;
-  border-radius:12px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);
+
+  padding:13px 16px;
+
+  border-radius:13px;
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
   font-weight:bold;
+
+  transition:.2s;
 }
 
-@media(max-width:700px){
+.tiktok:hover{
+  transform:translateY(-2px);
+
+  background:
+    rgba(255,255,255,.11);
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
   .subjects{
     grid-template-columns:1fr;
   }
 
+  .hero{
+    padding-top:55px;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
   .footer{
     flex-direction:column;
+
     align-items:flex-start;
   }
+
+  .panel{
+    padding:23px;
+  }
+
+  .question{
+    font-size:19px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
 <div class="container nav">
-<div class="logo">QWUİZY</div>
-<div class="profile">⚡ XP: <span id="xp">0</span></div>
+
+<div class="logo">
+QWUİZY
 </div>
+
+<div class="profile">
+⚡ XP: <span id="xp">0</span>
+</div>
+
+</div>
+
 </header>
 
-<section class="hero" id="home">
+
+
+<!-- HOME -->
+
+<main id="home">
+
+
+<section class="hero">
+
 <div class="container">
 
-<h1>Biliyini<br>oyuna çevir.</h1>
+<h1>
+Biliyini<br>
+oyuna çevir.
+</h1>
 
 <p>
-Azərbaycan dilində maraqlı və çətin testlər.
+Azərbaycan dilində maraqlı və düşündürücü testlər.
 Səviyyəni yüksəlt, XP topla və öz rekordunu qır.
 </p>
 
 </div>
+
 </section>
+
+
 
 <section id="subjectsSection">
 
 <div class="container">
 
 <div class="section-title">
-<h2>Fənn seç</h2>
-<p>Testə başlamaq üçün bir fənn seç.</p>
+
+<h2>
+Fənn seç
+</h2>
+
+<p>
+Testə başlamaq üçün bir fənn seç.
+</p>
+
 </div>
+
+
 
 <div class="subjects">
 
-<div class="card" onclick="selectSubject('riyaziyyat')">
-<div class="icon">📐</div>
-<h3>Riyaziyyat</h3>
-<p>Məntiq, funksiyalar, tənliklər və daha çox.</p>
+
+<!-- MATH -->
+
+<div
+class="card math"
+onclick="selectSubject('riyaziyyat')"
+>
+
+<div class="icon">
+📐
 </div>
 
-<div class="card" onclick="selectSubject('fizika')">
-<div class="icon">⚡</div>
-<h3>Fizika</h3>
-<p>Mexanika, enerji, qüvvə və digər mövzular.</p>
+<h3>
+Riyaziyyat
+</h3>
+
+<p>
+Funksiyalar, tənliklər, məntiq və daha çox.
+</p>
+
+<div class="card-label">
+TESTƏ BAŞLA →
 </div>
 
-<div class="card" onclick="selectSubject('english')">
-<div class="icon">🌍</div>
-<h3>English</h3>
-<p>Grammar, vocabulary və reading.</p>
+</div>
+
+
+
+<!-- PHYSICS -->
+
+<div
+class="card physics"
+onclick="selectSubject('fizika')"
+>
+
+<div class="icon">
+⚡
+</div>
+
+<h3>
+Fizika
+</h3>
+
+<p>
+Mexanika, qüvvə, enerji və digər mövzular.
+</p>
+
+<div class="card-label">
+TESTƏ BAŞLA →
 </div>
 
 </div>
+
+
+
+<!-- ENGLISH -->
+
+<div
+class="card english"
+onclick="selectSubject('english')"
+>
+
+<div class="icon">
+🌍
 </div>
+
+<h3>
+English
+</h3>
+
+<p>
+Grammar, vocabulary, reading və daha çox.
+</p>
+
+<div class="card-label">
+START TEST →
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
+
+
+
+<section class="container">
+
+<div class="challenge">
+
+<h2>
+🔥 Gündəlik Challenge
+</h2>
+
+<p>
+Hər gün öz rekordunu qır.
+Gələcək versiyada gündəlik missiyalar və streak sistemi də olacaq.
+</p>
+
+</div>
+
+</section>
+
+
+</main>
+
 
 
 <!-- SELECTION -->
 
-<div id="selection" class="panel hidden">
+<div
+id="selection"
+class="panel hidden"
+>
 
-<span class="back" onclick="goHome()">← Geri</span>
+<span
+class="back"
+onclick="goHome()"
+>
+← Geri
+</span>
 
-<h2 id="subjectTitle"></h2>
+<h2 id="subjectTitle">
+Fənn
+</h2>
 
 <br>
 
-<label>🎓 Sinif</label>
+<p style="color:#aaa9c8">
+🎓 Sinif seç
+</p>
+
 
 <div class="options">
-<button class="option" onclick="selectClass('11')">
+
+<button
+class="option"
+onclick="selectClass('11')"
+>
 11-ci sinif
 </button>
+
 </div>
+
 
 <br>
 
-<label>🧠 Çətinlik</label>
+
+<p style="color:#aaa9c8">
+🧠 Çətinlik səviyyəsi
+</p>
+
 
 <div class="options">
 
-<button class="option" onclick="startTest('medium')">
+<button
+class="option"
+onclick="startTest('medium')"
+>
 🟡 Medium
 </button>
 
-<button class="option" onclick="startTest('hard')">
+<button
+class="option"
+onclick="startTest('hard')"
+>
 🟠 Hard
 </button>
 
-<button class="option" onclick="startTest('expert')">
+<button
+class="option"
+onclick="startTest('expert')"
+>
 🔴 Expert
 </button>
 
@@ -366,44 +876,104 @@ Səviyyəni yüksəlt, XP topla və öz rekordunu qır.
 </div>
 
 
+
 <!-- QUIZ -->
 
-<div id="quiz" class="panel hidden">
+<div
+id="quiz"
+class="panel hidden"
+>
 
-<div>
-<span id="questionNumber"></span>
+
+<div class="quiz-top">
+
+<div
+id="questionNumber"
+class="question-number"
+>
+1 / 15
 </div>
+
+<div
+class="timer"
+id="timer"
+>
+⏱️ 180s
+</div>
+
+</div>
+
 
 <div class="progress">
-<div id="progressBar" class="progress-bar"></div>
-</div>
 
-<div class="timer">
-⏱️ <span id="timer">180</span>s
-</div>
-
-<div id="question" class="question"></div>
-
-<div id="answers" class="options"></div>
+<div
+id="progressBar"
+class="progress-bar"
+></div>
 
 </div>
+
+
+<div
+id="question"
+class="question"
+>
+Sual yüklənir...
+</div>
+
+
+<div
+id="answers"
+class="options"
+>
+</div>
+
+
+<div
+id="explanation"
+class="explanation hidden"
+>
+</div>
+
+
+</div>
+
 
 
 <!-- RESULT -->
 
-<div id="resultPanel" class="panel hidden">
+<div
+id="resultPanel"
+class="panel hidden"
+>
 
 <div class="result">
 
-<h2>🎉 Test tamamlandı!</h2>
-
-<div class="score">
-<span id="score"></span>/15
+<div class="result-icon">
+🎉
 </div>
 
-<p id="resultText"></p>
+<h2>
+Test tamamlandı!
+</h2>
 
-<button class="primary" onclick="goHome()">
+<div class="score">
+
+<span id="score">
+0
+</span>
+
+/15
+
+</div>
+
+<p id="resultText">
+</p>
+
+<button
+class="primary"
+onclick="goHome()"
+>
 🏠 Ana səhifə
 </button>
 
@@ -412,22 +982,31 @@ Səviyyəni yüksəlt, XP topla və öz rekordunu qır.
 </div>
 
 
+
+<!-- FOOTER -->
+
 <footer>
 
 <div class="container footer">
 
 <div>
-<strong>QWUİZY</strong>
 
-<p style="color:#aaa9c8;margin-top:7px;font-size:12px">
-İrad və ya tövsiyyələr üçün əlaqə:
-</p>
+<div class="footer-brand">
+QWUİZY
 </div>
+
+<div class="footer-note">
+İrad və ya tövsiyyələr üçün əlaqə:
+</div>
+
+</div>
+
 
 <a
 class="tiktok"
 href="https://www.tiktok.com/@ssamirreds"
 target="_blank"
+rel="noopener noreferrer"
 >
 ♪ TikTok: ssamirreds ↗
 </a>
@@ -437,245 +1016,579 @@ target="_blank"
 </footer>
 
 
+
 <script>
 
+
+/* ==========================================
+   QWUİZY DATA
+========================================== */
+
+
 let questions = {};
+
 let subject = "";
+
 let classLevel = "";
+
 let difficulty = "";
 
 let testQuestions = [];
+
 let currentQuestion = 0;
+
 let score = 0;
+
 let timeLeft = 180;
+
 let timerInterval;
 
-let xp = Number(localStorage.getItem("qwuizyXP")) || 0;
 
-document.getElementById("xp").textContent = xp;
+/* XP */
+
+let xp =
+Number(
+localStorage.getItem("qwuizyXP")
+) || 0;
 
 
-/* LOAD QUESTIONS */
+/* GÖRÜLMÜŞ SUALLAR */
+
+let seenQuestions =
+JSON.parse(
+localStorage.getItem(
+"qwuizySeenQuestions"
+)
+) || {};
+
+
+document.getElementById("xp")
+.textContent = xp;
+
+
+
+/* ==========================================
+   LOAD QUESTIONS
+========================================== */
+
 
 fetch("questions.json")
-.then(response => response.json())
+
+.then(response => {
+
+if(!response.ok){
+
+throw new Error(
+"questions.json tapılmadı"
+);
+
+}
+
+return response.json();
+
+})
+
 .then(data => {
 
 questions = data;
 
-console.log("Qwuizy sual bazası yükləndi.");
+console.log(
+"Qwuizy sual bazası yükləndi."
+);
 
 })
+
 .catch(error => {
 
-console.error("Sual bazası yüklənmədi:",error);
+console.error(error);
 
-alert("Sual bazası yüklənmədi. questions.json faylını yoxla.");
+alert(
+"⚠️ Sual bazası yüklənmədi. questions.json faylını yoxla."
+);
 
 });
 
 
-/* SUBJECT */
+
+/* ==========================================
+   SUBJECT
+========================================== */
+
 
 function selectSubject(selected){
 
 subject = selected;
 
-document.getElementById("subjectsSection")
-.classList.add("hidden");
 
-document.getElementById("home")
-.classList.add("hidden");
+document.getElementById(
+"home"
+).classList.add("hidden");
 
-document.getElementById("selection")
-.classList.remove("hidden");
+
+document.getElementById(
+"selection"
+).classList.remove("hidden");
+
 
 let names = {
 
-riyaziyyat:"📐 Riyaziyyat",
+riyaziyyat:
+"📐 Riyaziyyat",
 
-fizika:"⚡ Fizika",
+fizika:
+"⚡ Fizika",
 
-english:"🌍 English"
+english:
+"🌍 English"
 
 };
 
-document.getElementById("subjectTitle")
-textContent = names[selected];
+
+document.getElementById(
+"subjectTitle"
+).textContent =
+names[selected];
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 
-/* CLASS */
+
+/* ==========================================
+   CLASS
+========================================== */
+
 
 function selectClass(level){
 
 classLevel = level;
 
-alert("11-ci sinif seçildi. İndi çətinlik səviyyəsini seç.");
+alert(
+"🎓 11-ci sinif seçildi!\n\nİndi çətinlik səviyyəsini seç."
+);
 
 }
 
 
-/* START TEST */
+
+/* ==========================================
+   SEEN QUESTIONS KEY
+========================================== */
+
+
+function getSeenKey(){
+
+return (
+subject +
+"_" +
+classLevel
+);
+
+}
+
+
+
+/* ==========================================
+   GET AVAILABLE QUESTIONS
+========================================== */
+
+
+function getAvailableQuestions(bank){
+
+const key =
+getSeenKey();
+
+const seen =
+seenQuestions[key] || [];
+
+
+return bank.filter(
+q => !seen.includes(q.id)
+);
+
+}
+
+
+
+/* ==========================================
+   SAVE QUESTION AS SEEN
+========================================== */
+
+
+function saveQuestionAsSeen(q){
+
+const key =
+getSeenKey();
+
+
+if(!seenQuestions[key]){
+
+seenQuestions[key] = [];
+
+}
+
+
+if(
+!seenQuestions[key]
+.includes(q.id)
+){
+
+seenQuestions[key].push(q.id);
+
+}
+
+
+localStorage.setItem(
+"qwuizySeenQuestions",
+JSON.stringify(
+seenQuestions
+)
+);
+
+}
+
+
+
+/* ==========================================
+   START TEST
+========================================== */
+
 
 function startTest(level){
 
 difficulty = level;
 
-if(!questions[subject] ||
-!questions[subject][classLevel]){
 
-alert("Bu sinif üçün hələ sual yoxdur.");
+if(
+!questions[subject] ||
+!questions[subject][classLevel]
+){
+
+alert(
+"Bu sinif üçün hələ sual yoxdur."
+);
 
 return;
 
 }
 
-let bank = questions[subject][classLevel];
 
-/* FILTER */
+let bank =
+questions[subject][classLevel];
 
-let filtered = bank.filter(q =>
-q.difficulty === difficulty
+
+/* ƏVVƏL GÖRÜLMƏMİŞ */
+
+let available =
+getAvailableQuestions(bank);
+
+
+/* BÜTÜN SUALLAR BİTİBSƏ */
+
+if(available.length === 0){
+
+alert(
+"🎉 Təbriklər!\n\nBu bölmədəki bütün sualları artıq həll etmisən!"
 );
 
-
-/* Əgər həmin difficulty-də az sual varsa,
-mövcud bütün suallardan istifadə et */
-
-if(filtered.length < 15){
-
-filtered = bank;
+return;
 
 }
 
 
-/* SHUFFLE */
+/* DIFFICULTY FILTER */
 
-filtered = [...filtered];
+let filtered =
+available.filter(
+q =>
+q.difficulty === difficulty
+);
 
-for(let i=filtered.length-1;i>0;i--){
 
-let j=Math.floor(Math.random()*(i+1));
+/* Əgər seçilmiş çətinlikdə
+15 sual yoxdursa,
+digər görülməmiş suallardan istifadə et */
 
-[filtered[i],filtered[j]] =
-[filtered[j],filtered[i]];
+if(filtered.length < 15){
+
+filtered = available;
+
+}
+
+
+/* RANDOM SHUFFLE */
+
+filtered =
+[...filtered];
+
+
+for(
+let i=filtered.length-1;
+i>0;
+i--
+){
+
+let j =
+Math.floor(
+Math.random()*(i+1)
+);
+
+
+[
+filtered[i],
+filtered[j]
+] =
+[
+filtered[j],
+filtered[i]
+];
 
 }
 
 
 /* 15 SUAL */
 
-testQuestions = filtered.slice(0,15);
+testQuestions =
+filtered.slice(0,15);
+
+
+/* TEST BAŞLAYIR */
 
 currentQuestion = 0;
+
 score = 0;
 
 
-/* SHOW */
+document.getElementById(
+"selection"
+).classList.add("hidden");
 
-document.getElementById("selection")
-.classList.add("hidden");
 
-document.getElementById("quiz")
-.classList.remove("hidden");
+document.getElementById(
+"quiz"
+).classList.remove("hidden");
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 
 showQuestion();
 
 }
 
 
-/* SHOW QUESTION */
+
+/* ==========================================
+   SHOW QUESTION
+========================================== */
+
 
 function showQuestion(){
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
+
 
 timeLeft = 180;
 
-document.getElementById("timer")
-.textContent = timeLeft;
 
-timerInterval = setInterval(()=>{
+let timer =
+document.getElementById(
+"timer"
+);
+
+
+timer.textContent =
+"⏱️ " +
+timeLeft +
+"s";
+
+
+timer.classList.remove(
+"danger"
+);
+
+
+timerInterval =
+setInterval(()=>{
+
 
 timeLeft--;
 
-document.getElementById("timer")
-.textContent = timeLeft;
+
+timer.textContent =
+"⏱️ " +
+timeLeft +
+"s";
+
+
+if(timeLeft <= 30){
+
+timer.classList.add(
+"danger"
+);
+
+}
+
 
 if(timeLeft <= 0){
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
 
 nextQuestion(-1);
 
 }
 
+
 },1000);
 
 
-let q = testQuestions[currentQuestion];
 
-document.getElementById("questionNumber")
+let q =
+testQuestions[
+currentQuestion
+];
+
+
+document.getElementById(
+"questionNumber"
+)
 .textContent =
-`${currentQuestion+1} / 15`;
+`${currentQuestion+1} / ${testQuestions.length}`;
 
-document.getElementById("progressBar")
+
+document.getElementById(
+"progressBar"
+)
 .style.width =
-`${((currentQuestion)/15)*100}%`;
+`${(
+(currentQuestion) /
+testQuestions.length
+)*100}%`;
 
-document.getElementById("question")
-.textContent = q.question;
+
+document.getElementById(
+"question"
+)
+.textContent =
+q.question;
+
+
+document.getElementById(
+"explanation"
+)
+.classList.add(
+"hidden"
+);
+
 
 let answers =
-document.getElementById("answers");
+document.getElementById(
+"answers"
+);
+
 
 answers.innerHTML = "";
 
 
-q.answers.forEach((answer,index)=>{
+q.answers.forEach(
+(answer,index)=>{
+
 
 let button =
-document.createElement("button");
+document.createElement(
+"button"
+);
 
-button.className="option";
 
-button.textContent=answer;
+button.className =
+"option";
 
-button.onclick=()=>nextQuestion(index);
 
-answers.appendChild(button);
+button.textContent =
+answer;
+
+
+button.onclick =
+()=>nextQuestion(index);
+
+
+answers.appendChild(
+button
+);
 
 });
 
 }
 
 
-/* NEXT */
+
+/* ==========================================
+   NEXT QUESTION
+========================================== */
+
 
 function nextQuestion(answer){
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
 
-let q=testQuestions[currentQuestion];
 
-if(answer === q.correct){
+let q =
+testQuestions[
+currentQuestion
+];
+
+
+/* SUAL ARTIQ GÖRÜLDÜ */
+
+saveQuestionAsSeen(q);
+
+
+/* DÜZGÜN CAVAB */
+
+if(
+answer === q.correct
+){
 
 score++;
 
 xp += 10;
 
-localStorage.setItem("qwuizyXP",xp);
 
-document.getElementById("xp")
-.textContent=xp;
+localStorage.setItem(
+"qwuizyXP",
+xp
+);
+
+
+document.getElementById(
+"xp"
+)
+.textContent = xp;
 
 }
 
+
 currentQuestion++;
 
-if(currentQuestion >= testQuestions.length){
+
+if(
+currentQuestion >=
+testQuestions.length
+){
 
 finishTest();
 
@@ -683,61 +1596,144 @@ return;
 
 }
 
+
 showQuestion();
 
 }
 
 
-/* FINISH */
+
+/* ==========================================
+   FINISH TEST
+========================================== */
+
 
 function finishTest(){
 
-clearInterval(timerInterval);
-
-document.getElementById("quiz")
-.classList.add("hidden");
-
-document.getElementById("resultPanel")
-.classList.remove("hidden");
-
-document.getElementById("score")
-.textContent=score;
-
-let percent=Math.round(
-score / 15 * 100
+clearInterval(
+timerInterval
 );
 
-document.getElementById("resultText")
+
+document.getElementById(
+"quiz"
+)
+.classList.add("hidden");
+
+
+document.getElementById(
+"resultPanel"
+)
+.classList.remove("hidden");
+
+
+document.getElementById(
+"score"
+)
 .textContent =
-`Nəticən ${percent}% oldu. +${score*10} XP qazandın!`;
+score;
+
+
+let total =
+testQuestions.length;
+
+
+let percent =
+Math.round(
+(score/total)*100
+);
+
+
+let message;
+
+
+if(percent >= 90){
+
+message =
+"🔥 Möhtəşəm nəticə! Sən həqiqətən güclüsən.";
+
+}
+else if(percent >= 70){
+
+message =
+"💪 Çox yaxşı! Bir az da məşq et və daha yüksək nəticə al.";
+
+}
+else if(percent >= 50){
+
+message =
+"📈 Pis deyil! Daha çox məşq etsən nəticən sürətlə artacaq.";
+
+}
+else{
+
+message =
+"🧠 Təslim olma! Səhvlərini öyrən və yenidən cəhd et.";
 
 }
 
 
-/* HOME */
+document.getElementById(
+"resultText"
+)
+.textContent =
+`${message} ${score*10} XP qazandın!`;
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+
+/* ==========================================
+   HOME
+========================================== */
+
 
 function goHome(){
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
 
-document.getElementById("selection")
+
+document.getElementById(
+"selection"
+)
 .classList.add("hidden");
 
-document.getElementById("quiz")
+
+document.getElementById(
+"quiz"
+)
 .classList.add("hidden");
 
-document.getElementById("resultPanel")
+
+document.getElementById(
+"resultPanel"
+)
 .classList.add("hidden");
 
-document.getElementById("subjectsSection")
+
+document.getElementById(
+"home"
+)
 .classList.remove("hidden");
 
-document.getElementById("home")
-.classList.remove("hidden");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
+
 
 </script>
 
 </body>
-</html>
+  </html>
