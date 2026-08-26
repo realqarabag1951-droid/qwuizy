@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09091a">
+  <meta name="description" content="Qwuizy — Azərbaycan dilində maraqlı testlər, challenge-lər və bilik yarışları.">
+  <title>Qwuizy — Biliyini yoxla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#080816;
+      --panel:rgba(20,20,42,.78);
+      --panel2:rgba(29,25,55,.72);
+      --text:#f7f7ff;
+      --muted:#aaa9c8;
+      --cyan:#22d3ee;
+      --purple:#8b5cf6;
+      --pink:#ec4899;
+      --yellow:#facc15;
+      --green:#34d399;
+      --border:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(139,92,246,.30), transparent 28%),
+        radial-gradient(circle at 90% 15%, rgba(34,211,238,.18), transparent 25%),
+        radial-gradient(circle at 70% 85%, rgba(236,72,153,.20), transparent 28%),
+        var(--bg);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed; inset:0; pointer-events:none; opacity:.18;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+                       linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 75%);
+    }
+    .container{width:min(1120px,92%);margin:auto}
+    nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(18px);
+      background:rgba(8,8,22,.72);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{
+      font-size:25px;font-weight:900;letter-spacing:-1.5px;
+      background:linear-gradient(90deg,var(--cyan),#a78bfa,var(--pink));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .nav-btn{
+      color:white;text-decoration:none;padding:10px 16px;border:1px solid var(--border);
+      border-radius:999px;background:rgba(255,255,255,.05);font-weight:700;font-size:13px;
+    }
+    .hero{padding:78px 0 48px;text-align:center;position:relative}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border-radius:999px;
+      background:rgba(139,92,246,.13);border:1px solid rgba(139,92,246,.35);
+      color:#ddd6fe;font-size:12px;font-weight:800;margin-bottom:22px;
+    }
+    h1{
+      font-size:clamp(48px,9vw,94px);line-height:.95;letter-spacing:-5px;font-weight:900;
+      background:linear-gradient(110deg,#fff 5%,#c4b5fd 38%,#67e8f9 68%,#f9a8d4 95%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero p{max-width:680px;margin:24px auto 30px;color:var(--muted);font-size:17px;line-height:1.65}
+    .cta{
+      display:inline-flex;align-items:center;gap:9px;padding:14px 21px;border-radius:14px;
+      background:linear-gradient(100deg,var(--purple),var(--pink));
+      color:#fff;text-decoration:none;font-weight:800;box-shadow:0 12px 40px rgba(139,92,246,.28);
+      transition:.2s transform,.2s box-shadow;
+    }
+    .cta:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(236,72,153,.28)}
+    section{padding:34px 0 70px}
+    .section-title{text-align:center;margin-bottom:26px}
+    .section-title h2{font-size:30px;letter-spacing:-1px}
+    .section-title p{color:var(--muted);margin-top:8px}
+    .subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{
+      position:relative;overflow:hidden;min-height:170px;padding:24px;border-radius:22px;
+      border:1px solid var(--border);background:linear-gradient(145deg,rgba(27,25,55,.88),rgba(15,15,31,.75));
+      transition:.22s transform,.22s border-color,.22s box-shadow;cursor:pointer;
+    }
+    .card:after{
+      content:"";position:absolute;width:120px;height:120px;border-radius:50%;
+      right:-45px;bottom:-50px;background:var(--glow,rgba(34,211,238,.25));filter:blur(5px)
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.22);box-shadow:0 18px 45px rgba(0,0,0,.25)}
+    .icon{font-size:34px;margin-bottom:18px}
+    .card h3{font-size:18px;margin-bottom:7px}
+    .card p{font-size:13px;color:var(--muted);line-height:1.5}
+    .start{margin-top:16px;color:#fff;font-size:12px;font-weight:800}
+    .cyan{--glow:rgba(34,211,238,.3)} .purple{--glow:rgba(139,92,246,.32)}
+    .pink{--glow:rgba(236,72,153,.3)} .yellow{--glow:rgba(250,204,21,.28)}
+    .green{--glow:rgba(52,211,153,.3)} .orange{--glow:rgba(251,146,60,.3)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .feature{
+      padding:22px;border:1px solid var(--border);border-radius:20px;background:rgba(255,255,255,.035)
+    }
+    .feature b{display:block;margin:10px 0 7px}.feature span{font-size:13px;color:var(--muted);line-height:1.5}
+    .challenge{
+      padding:30px;border-radius:26px;border:1px solid rgba(34,211,238,.18);
+      background:linear-gradient(110deg,rgba(34,211,238,.10),rgba(139,92,246,.12),rgba(236,72,153,.08));
+      text-align:center;position:relative;overflow:hidden
+    }
+    .challenge h2{font-size:28px;margin-bottom:10px}.challenge p{color:var(--muted);margin-bottom:20px}
+    footer{
+      border-top:1px solid var(--border);padding:35px 0 45px;margin-top:20px;
+      background:rgba(5,5,15,.45)
+    }
+    .footer-inner{display:flex;justify-content:space-between;gap:25px;align-items:center}
+    .footer-brand{font-weight:900;font-size:20px}.footer-note{color:var(--muted);font-size:12px;margin-top:6px}
+    .tiktok{
+      display:inline-flex;align-items:center;gap:9px;color:white;text-decoration:none;
+      padding:12px 15px;border-radius:13px;background:rgba(255,255,255,.06);border:1px solid var(--border);
+      font-weight:800;font-size:13px;transition:.2s
+    }
+    .tiktok:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .modal{
+      position:fixed;inset:0;background:rgba(0,0,0,.68);backdrop-filter:blur(10px);
+      display:none;align-items:center;justify-content:center;padding:20px;z-index:50
+    }
+    .modal.show{display:flex}
+    .modal-box{width:min(520px,100%);padding:28px;border-radius:25px;background:#15142b;border:1px solid var(--border);box-shadow:0 30px 100px rgba(0,0,0,.45)}
+    .modal-top{display:flex;justify-content:space-between;gap:15px;align-items:center}
+    .close{border:0;background:rgba(255,255,255,.08);color:white;width:35px;height:35px;border-radius:50%;cursor:pointer;font-size:18px}
+    .quiz-question{font-size:18px;font-weight:800;line-height:1.45;margin:22px 0}
+    .answers{display:grid;gap:10px}
+    .answer{border:1px solid var(--border);background:rgba(255,255,255,.045);color:#fff;padding:14px;border-radius:13px;text-align:left;cursor:pointer;font-weight:600}
+    .answer:hover{border-color:rgba(34,211,238,.55);background:rgba(34,211,238,.08)}
+    .result{margin-top:18px;font-weight:800;color:#67e8f9}
+    @media(max-width:760px){
+      .subjects,.features{grid-template-columns:1fr}
+      .hero{padding-top:58px}
+      h1{letter-spacing:-3px}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">QWUİZY</div>
+      <a class="nav-btn" href="#subjects">Testlərə keç →</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">⚡ Azərbaycan dilində • Challenge rejimi</div>
+        <h1>Biliyini<br>oyuna çevir.</h1>
+        <p>Qwuizy-də özünü yoxla, sürətini sınay, nəticəni gör və dostlarınla yarış. Dərs oxumaq məcburiyyət kimi yox, challenge kimi hiss olunsun.</p>
+        <a class="cta" href="#subjects">🚀 İlk testə başla</a>
+      </div>
+    </section>
+
+    <section id="subjects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Bir mövzu seç</h2>
+          <p>İlk versiyada nümunə testlər var — sual bazasını sonra böyüdə bilərik.</p>
+        </div>
+
+        <div class="subjects">
+          <div class="card cyan" onclick="openQuiz('Riyaziyyat')">
+            <div class="icon">📐</div><h3>Riyaziyyat</h3><p>Məntiq, hesab və sürətli düşünmə.</p><div class="start">TESTƏ BAŞLA →</div>
+          </div>
+          <div class="card purple" onclick="openQuiz('Fizika')">
+            <div class="icon">⚡</div><h3>Fizika</h3><p>Qüvvə, sürət, enerji və daha çoxu.</p><div class="start">TESTƏ BAŞLA →</div>
+          </div>
+          <div class="card pink" onclick="openQuiz('Azərbaycan dili')">
+            <div class="icon">🇦🇿</div><h3>Azərbaycan dili</h3><p>Qrammatika, söz və dil qaydaları.</p><div class="start">TESTƏ BAŞLA →</div>
+          </div>
+          <div class="card yellow" onclick="openQuiz('İngilis dili')">
+            <div class="icon">🌍</div><h3>İngilis dili</h3><p>Vocabulary və gündəlik English.</p><div class="start">TESTƏ BAŞLA →</div>
+          </div>
+          <div class="card green" onclick="openQuiz('Biologiya')">
+            <div class="icon">🧬</div><h3>Biologiya</h3><p>Canlılar aləmi və insan orqanizmi.</p><div class="start">TESTƏ BAŞLA →</div>
+          </div>
+          <div class="card orange" onclick="openQuiz('Məntiq')">
+            <div class="icon">🧠</div><h3>Məntiq</h3><p>Fikirləş, əlaqəni tap və cavabı vur.</p><div class="start">TESTƏ BAŞLA →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="challenge">
+          <h2>🔥 Gündəlik Challenge</h2>
+          <p>Hər gün 5 yeni sual. Seriyanı pozma və öz rekordunu qır.</p>
+          <a class="cta" href="#subjects">Challenge-a qoşul</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title"><h2>Niyə Qwuizy?</h2><p>Testi dərsdən daha maraqlı etmək üçün.</p></div>
+        <div class="features">
+          <div class="feature">⏱️<b>Sürətli testlər</b><span>Uzun-uzadı formalar yox. Qısa, aydın və fokuslanmış suallar.</span></div>
+          <div class="feature">🏆<b>Rekord sistemi</b><span>Sonrakı versiyada xal, streak və leaderboard əlavə edilə bilər.</span></div>
+          <div class="feature">💡<b>Cavab izahları</b><span>Sadəcə “düzdür/səhvdir” yox — niyə belə olduğunu da öyrən.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">QWUİZY</div>
+        <div class="footer-note">İrad və ya tövsiyyələr üçün əlaqə:</div>
+      </div>
+      <a class="tiktok" href="https://www.tiktok.com/@ssamirreds" target="_blank" rel="noopener noreferrer">♪ TikTok: ssamirreds ↗</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" onclick="if(event.target===this) closeQuiz()">
+    <div class="modal-box">
+      <div class="modal-top">
+        <div><small id="quizSubject"></small><h2 id="quizTitle">Test</h2></div>
+        <button class="close" onclick="closeQuiz()">×</button>
+      </div>
+      <div class="quiz-question" id="question"></div>
+      <div class="answers" id="answers"></div>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    const quizzes = {
+      "Riyaziyyat":[
+        {q:"12 × 8 neçədir?",a:["86","96","108","88"],c:1},
+        {q:"√81 neçədir?",a:["7","8","9","10"],c:2}
+      ],
+      "Fizika":[
+        {q:"Sürətin SI vahidi hansıdır?",a:["Nyuton","Coulomb","m/s","Celsius"],c:2},
+        {q:"Qüvvənin SI vahidi hansıdır?",a:["Joul","Nyuton","Vatt","Paskal"],c:1}
+      ],
+      "Azərbaycan dili":[
+        {q:"“Kitab” sözü hansı nitq hissəsidir?",a:["Feil","Sifət","İsim","Zərf"],c:2},
+        {q:"“Gözəl” sözünün əksi hansıdır?",a:["Pis","Böyük","Uca","Sakit"],c:0}
+      ],
+      "İngilis dili":[
+        {q:"“Book” sözünün Azərbaycan dilində qarşılığı hansıdır?",a:["Qələm","Kitab","Masa","Məktəb"],c:1},
+        {q:"“Fast” sözünün yaxın mənası hansıdır?",a:["Slow","Quick","Weak","Late"],c:1}
+      ],
+      "Biologiya":[
+        {q:"İnsanda qanı bədənə pompalayan orqan hansıdır?",a:["Ağciyər","Beyin","Ürək","Mədə"],c:2},
+        {q:"Bitkilər fotosintez zamanı əsasən hansı qazı qəbul edir?",a:["Oksigen","Azot","Karbon qazı","Hidrogen"],c:2}
+      ],
+      "Məntiq":[
+        {q:"2, 4, 8, 16, ? — növbəti ədəd hansıdır?",a:["20","24","32","36"],c:2},
+        {q:"Bütün A-lar B-dir. X bir A-dır. Deməli X nədir?",a:["B","C","A deyil","Heç biri"],c:0}
+      ]
+    };
+
+    let current = [], index = 0, score = 0, subject = "";
+
+    function openQuiz(name){
+      subject=name; current=quizzes[name]; index=0; score=0;
+      document.getElementById("modal").classList.add("show");
+      document.getElementById("quizSubject").textContent=name;
+      document.getElementById("quizTitle").textContent="Mini Test";
+      showQuestion();
+    }
+    function showQuestion(){
+      const item=current[index];
+      document.getElementById("result").textContent="";
+      document.getElementById("question").textContent=(index+1)+"/"+current.length+" — "+item.q;
+      const box=document.getElementById("answers");
+      box.innerHTML="";
+      item.a.forEach((answer,i)=>{
+        const btn=document.createElement("button");
+        btn.className="answer"; btn.textContent=answer;
+        btn.onclick=()=>answerQuestion(i);
+        box.appendChild(btn);
+      });
+    }
+    function answerQuestion(choice){
+      if(choice===current[index].c) score++;
+      index++;
+      if(index<current.length){ showQuestion(); }
+      else{
+        document.getElementById("question").textContent="🎉 Test tamamlandı!";
+        document.getElementById("answers").innerHTML="";
+        const percent=Math.round(score/current.length*100);
+        document.getElementById("result").textContent=`Nəticən: ${score}/${current.length} — ${percent}%`;
+      }
+    }
+    function closeQuiz(){document.getElementById("modal").classList.remove("show")}
+  </script>
+</body>
+</html>
