@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>Qwuizy — Biliyini oyuna çevir</title>
 
+
 <style>
+
+/* =========================================
+   RESET
+========================================= */
 
 *{
   box-sizing:border-box;
@@ -19,48 +30,104 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color:#fff;
+
   min-height:100vh;
 
   background:
-    radial-gradient(circle at 10% 10%,#6d28d9 0%,transparent 30%),
-    radial-gradient(circle at 90% 15%,#0891b2 0%,transparent 28%),
-    radial-gradient(circle at 70% 90%,#be185d 0%,transparent 30%),
+
+    radial-gradient(
+      circle at 10% 10%,
+      #6d28d9 0%,
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 90% 15%,
+      #0891b2 0%,
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 70% 90%,
+      #be185d 0%,
+      transparent 30%
+    ),
+
     #080817;
+
 }
+
+
+/* =========================================
+   GENERAL
+========================================= */
 
 .container{
+
   width:min(1100px,92%);
+
   margin:auto;
+
 }
 
-/* HEADER */
+.hidden{
+
+  display:none !important;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
 
 header{
+
   padding:20px 0;
 
   border-bottom:
     1px solid rgba(255,255,255,.1);
 
-  backdrop-filter:blur(18px);
+  backdrop-filter:
+    blur(18px);
+
+  background:
+    rgba(8,8,23,.55);
 
   position:sticky;
+
   top:0;
+
   z-index:100;
+
 }
 
 .nav{
+
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   align-items:center;
+
 }
 
 .logo{
+
   font-size:27px;
+
   font-weight:900;
 
   background:
+
     linear-gradient(
       90deg,
       #22d3ee,
@@ -69,12 +136,15 @@ header{
     );
 
   -webkit-background-clip:text;
+
   background-clip:text;
 
   color:transparent;
+
 }
 
 .profile{
+
   padding:10px 15px;
 
   border-radius:13px;
@@ -86,17 +156,27 @@ header{
     1px solid rgba(255,255,255,.1);
 
   font-weight:bold;
+
 }
 
-/* HERO */
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero{
+
   text-align:center;
-  padding:75px 0 55px;
+
+  padding:
+    75px 0 55px;
+
 }
 
 .hero h1{
-  font-size:clamp(48px,9vw,85px);
+
+  font-size:
+    clamp(48px,9vw,85px);
 
   font-weight:900;
 
@@ -105,6 +185,7 @@ header{
   letter-spacing:-5px;
 
   background:
+
     linear-gradient(
       100deg,
       #fff,
@@ -114,12 +195,15 @@ header{
     );
 
   -webkit-background-clip:text;
+
   background-clip:text;
 
   color:transparent;
+
 }
 
 .hero p{
+
   color:#aaa9c8;
 
   max-width:650px;
@@ -129,36 +213,54 @@ header{
   line-height:1.7;
 
   font-size:16px;
+
 }
 
-/* SECTION */
+
+/* =========================================
+   SECTION TITLE
+========================================= */
 
 .section-title{
+
   text-align:center;
+
   margin-bottom:28px;
+
 }
 
 .section-title h2{
+
   font-size:30px;
+
 }
 
 .section-title p{
+
   color:#aaa9c8;
+
   margin-top:8px;
+
 }
 
-/* SUBJECTS */
+
+/* =========================================
+   SUBJECTS
+========================================= */
 
 .subjects{
+
   display:grid;
 
   grid-template-columns:
     repeat(3,1fr);
 
   gap:18px;
+
 }
 
 .card{
+
   padding:25px;
 
   min-height:185px;
@@ -174,16 +276,21 @@ header{
   cursor:pointer;
 
   transition:
+
     transform .2s,
     border-color .2s,
     box-shadow .2s;
 
   position:relative;
+
   overflow:hidden;
+
 }
 
 .card:hover{
-  transform:translateY(-6px);
+
+  transform:
+    translateY(-6px);
 
   border-color:
     rgba(255,255,255,.3);
@@ -191,55 +298,77 @@ header{
   box-shadow:
     0 20px 50px
     rgba(0,0,0,.3);
+
 }
 
 .card:after{
+
   content:"";
 
   position:absolute;
 
   width:130px;
+
   height:130px;
 
   border-radius:50%;
 
   right:-50px;
+
   bottom:-55px;
 
   filter:blur(10px);
 
   opacity:.4;
+
 }
 
 .math:after{
+
   background:#22d3ee;
+
 }
 
 .physics:after{
+
   background:#8b5cf6;
+
 }
 
 .english:after{
+
   background:#ec4899;
+
 }
 
 .icon{
+
   font-size:38px;
+
   margin-bottom:17px;
+
 }
 
 .card h3{
+
   font-size:20px;
+
   margin-bottom:8px;
+
 }
 
 .card p{
+
   color:#aaa9c8;
+
   font-size:13px;
+
   line-height:1.6;
+
 }
 
 .card-label{
+
   margin-top:17px;
 
   color:#67e8f9;
@@ -247,11 +376,16 @@ header{
   font-size:12px;
 
   font-weight:bold;
+
 }
 
-/* PANELS */
+
+/* =========================================
+   PANELS
+========================================= */
 
 .panel{
+
   width:min(720px,92%);
 
   margin:35px auto;
@@ -269,13 +403,11 @@ header{
   box-shadow:
     0 25px 80px
     rgba(0,0,0,.25);
-}
 
-.hidden{
-  display:none !important;
 }
 
 .back{
+
   display:inline-block;
 
   color:#aaa9c8;
@@ -283,27 +415,38 @@ header{
   cursor:pointer;
 
   margin-bottom:20px;
+
 }
 
 .back:hover{
+
   color:white;
+
 }
 
 .panel h2{
+
   font-size:28px;
+
 }
 
-/* OPTIONS */
+
+/* =========================================
+   CLASS OPTIONS
+========================================= */
 
 .options{
+
   display:grid;
 
   gap:12px;
 
   margin-top:18px;
+
 }
 
 .option{
+
   padding:16px;
 
   border-radius:14px;
@@ -323,42 +466,31 @@ header{
   font-weight:bold;
 
   transition:.2s;
+
+  font-size:15px;
+
 }
 
 .option:hover{
+
   background:
     rgba(124,58,237,.2);
 
   border-color:
     #8b5cf6;
 
-  transform:translateX(3px);
+  transform:
+    translateX(3px);
+
 }
 
-/* CLASS BUTTON */
 
-.class-option{
-  position:relative;
-  overflow:hidden;
-}
-
-.class-number{
-  font-size:22px;
-  font-weight:900;
-  margin-right:7px;
-}
-
-.class-info{
-  display:block;
-  margin-top:5px;
-  font-size:12px;
-  color:#aaa9c8;
-  font-weight:normal;
-}
-
-/* QUIZ */
+/* =========================================
+   QUIZ
+========================================= */
 
 .quiz-top{
+
   display:flex;
 
   justify-content:
@@ -369,25 +501,33 @@ header{
   gap:15px;
 
   margin-bottom:12px;
+
 }
 
 .question-number{
+
   color:#aaa9c8;
 
   font-weight:bold;
+
 }
 
 .timer{
+
   color:#67e8f9;
 
   font-weight:bold;
+
 }
 
 .timer.danger{
+
   color:#fb7185;
+
 }
 
 .progress{
+
   width:100%;
 
   height:8px;
@@ -400,14 +540,17 @@ header{
   overflow:hidden;
 
   margin-bottom:25px;
+
 }
 
 .progress-bar{
+
   height:100%;
 
   width:0%;
 
   background:
+
     linear-gradient(
       90deg,
       #22d3ee,
@@ -416,9 +559,11 @@ header{
     );
 
   transition:.3s;
+
 }
 
 .question{
+
   font-size:22px;
 
   font-weight:bold;
@@ -426,33 +571,28 @@ header{
   line-height:1.55;
 
   margin:20px 0;
+
 }
 
-.option.correct{
-  border-color:#22c55e;
-  background:rgba(34,197,94,.15);
-}
 
-.option.wrong{
-  border-color:#fb7185;
-  background:rgba(251,113,133,.15);
-}
-
-.option.disabled{
-  pointer-events:none;
-}
-
-/* RESULT */
+/* =========================================
+   RESULT
+========================================= */
 
 .result{
+
   text-align:center;
+
 }
 
 .result-icon{
+
   font-size:55px;
+
 }
 
 .score{
+
   font-size:60px;
 
   font-weight:900;
@@ -460,6 +600,7 @@ header{
   margin:15px;
 
   background:
+
     linear-gradient(
       90deg,
       #22d3ee,
@@ -469,16 +610,22 @@ header{
 
   -webkit-background-clip:text;
 
+  background-clip:text;
+
   color:transparent;
+
 }
 
 .result p{
+
   color:#aaa9c8;
 
   line-height:1.6;
+
 }
 
 .primary{
+
   display:inline-block;
 
   margin-top:22px;
@@ -488,6 +635,7 @@ header{
   border-radius:13px;
 
   background:
+
     linear-gradient(
       90deg,
       #7c3aed,
@@ -504,93 +652,15 @@ header{
 
   font-size:14px;
 
-  transition:.2s;
 }
 
-.primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 30px rgba(124,58,237,.3);
-}
 
-.secondary{
-  display:inline-block;
-
-  margin-top:22px;
-  margin-left:8px;
-
-  padding:14px 21px;
-
-  border-radius:13px;
-
-  background:
-    rgba(255,255,255,.07);
-
-  color:white;
-
-  border:1px solid rgba(255,255,255,.1);
-
-  cursor:pointer;
-
-  font-weight:bold;
-
-  font-size:14px;
-
-  transition:.2s;
-}
-
-.secondary:hover{
-  background:rgba(255,255,255,.12);
-}
-
-/* REVIEW */
-
-.review{
-  margin-top:28px;
-
-  text-align:left;
-
-  display:grid;
-
-  gap:12px;
-}
-
-.review-item{
-  padding:17px;
-
-  border-radius:15px;
-
-  background:rgba(255,255,255,.04);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.review-question{
-  font-weight:bold;
-  line-height:1.5;
-  margin-bottom:9px;
-}
-
-.review-wrong{
-  color:#fb7185;
-  font-size:13px;
-  margin-bottom:5px;
-}
-
-.review-correct{
-  color:#4ade80;
-  font-size:13px;
-}
-
-.review-explanation{
-  color:#aaa9c8;
-  font-size:13px;
-  line-height:1.5;
-  margin-top:9px;
-}
-
-/* CHALLENGE */
+/* =========================================
+   CHALLENGE
+========================================= */
 
 .challenge{
+
   margin-top:70px;
 
   padding:30px;
@@ -600,6 +670,7 @@ header{
   text-align:center;
 
   background:
+
     linear-gradient(
       110deg,
       rgba(34,211,238,.10),
@@ -609,29 +680,41 @@ header{
 
   border:
     1px solid rgba(255,255,255,.1);
+
 }
 
 .challenge h2{
+
   margin-bottom:10px;
+
 }
 
 .challenge p{
+
   color:#aaa9c8;
+
   line-height:1.6;
+
 }
 
-/* FOOTER */
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer{
+
   margin-top:80px;
 
   padding:38px 0;
 
   border-top:
     1px solid rgba(255,255,255,.1);
+
 }
 
 .footer{
+
   display:flex;
 
   justify-content:
@@ -640,22 +723,29 @@ footer{
   align-items:center;
 
   gap:20px;
+
 }
 
 .footer-brand{
+
   font-size:20px;
+
   font-weight:900;
+
 }
 
 .footer-note{
+
   color:#aaa9c8;
 
   font-size:12px;
 
   margin-top:7px;
+
 }
 
 .tiktok{
+
   color:white;
 
   text-decoration:none;
@@ -673,447 +763,495 @@ footer{
   font-weight:bold;
 
   transition:.2s;
+
 }
 
 .tiktok:hover{
-  background:rgba(236,72,153,.18);
-  border-color:#ec4899;
+
+  background:
+    rgba(236,72,153,.2);
+
+  border-color:
+    #ec4899;
+
 }
 
-/* MOBILE */
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media(max-width:750px){
 
   .subjects{
+
     grid-template-columns:1fr;
+
   }
 
   .hero{
+
     padding-top:55px;
+
   }
 
   .hero h1{
+
     letter-spacing:-3px;
+
   }
 
   .footer{
+
     flex-direction:column;
 
     align-items:flex-start;
+
   }
 
   .panel{
+
     padding:23px;
+
   }
 
   .question{
+
     font-size:19px;
+
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- HEADER -->
+<!-- =======================================
+     HEADER
+======================================= -->
 
 <header>
 
-<div class="container nav">
+  <div class="container nav">
 
-<div class="logo">
-QWUİZY
-</div>
+    <div class="logo">
+      QWUİZY
+    </div>
 
-<div class="profile">
-⚡ XP: <span id="xp">0</span>
-</div>
+    <div class="profile">
 
-</div>
+      ⚡ XP:
+      <span id="xp">0</span>
+
+    </div>
+
+  </div>
 
 </header>
 
 
-
-<!-- HOME -->
+<!-- =======================================
+     HOME
+======================================= -->
 
 <main id="home">
 
 
-<section class="hero">
+  <section class="hero">
 
-<div class="container">
+    <div class="container">
 
-<h1>
-Biliyini<br>
-oyuna çevir.
-</h1>
+      <h1>
+        Biliyini<br>
+        oyuna çevir.
+      </h1>
 
-<p>
-Azərbaycan dilində maraqlı və düşündürücü testlər.
-Səviyyəni yüksəlt, XP topla və öz rekordunu qır.
-</p>
+      <p>
+        Azərbaycan dilində maraqlı və
+        düşündürücü testlər.
+        Səviyyəni yüksəlt, XP topla
+        və öz rekordunu qır.
+      </p>
 
-</div>
+    </div>
 
-</section>
-
-
-
-<section id="subjectsSection">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Fənn seç
-</h2>
-
-<p>
-Əvvəlcə test etmək istədiyin fənni seç.
-</p>
-
-</div>
+  </section>
 
 
+  <section id="subjectsSection">
 
-<div class="subjects">
+    <div class="container">
 
+      <div class="section-title">
 
-<div
-class="card math"
-onclick="selectSubject('riyaziyyat')"
->
+        <h2>
+          Fənn seç
+        </h2>
 
-<div class="icon">
-📐
-</div>
+        <p>
+          Testə başlamaq üçün bir fənn seç.
+        </p>
 
-<h3>
-Riyaziyyat
-</h3>
-
-<p>
-Funksiyalar, tənliklər, məntiq və daha çox.
-</p>
-
-<div class="card-label">
-TESTƏ BAŞLA →
-</div>
-
-</div>
+      </div>
 
 
-
-<div
-class="card physics"
-onclick="selectSubject('fizika')"
->
-
-<div class="icon">
-⚡
-</div>
-
-<h3>
-Fizika
-</h3>
-
-<p>
-Mexanika, qüvvə, enerji və digər mövzular.
-</p>
-
-<div class="card-label">
-TESTƏ BAŞLA →
-</div>
-
-</div>
+      <div class="subjects">
 
 
+        <!-- RİYAZİYYAT -->
 
-<div
-class="card english"
-onclick="selectSubject('english')"
->
+        <div
+          class="card math"
+          onclick="selectSubject('riyaziyyat')"
+        >
 
-<div class="icon">
-🌍
-</div>
+          <div class="icon">
+            📐
+          </div>
 
-<h3>
-English
-</h3>
+          <h3>
+            Riyaziyyat
+          </h3>
 
-<p>
-Grammar, vocabulary, reading və daha çox.
-</p>
+          <p>
+            Tənliklər, funksiyalar,
+            həndəsə, məntiq və daha çox.
+          </p>
 
-<div class="card-label">
-START TEST →
-</div>
+          <div class="card-label">
+            TESTƏ BAŞLA →
+          </div>
 
-</div>
-
-
-</div>
-
-</div>
-
-</section>
+        </div>
 
 
+        <!-- FİZİKA -->
 
-<section class="container">
+        <div
+          class="card physics"
+          onclick="selectSubject('fizika')"
+        >
 
-<div class="challenge">
+          <div class="icon">
+            ⚡
+          </div>
 
-<h2>
-🔥 Gündəlik Challenge
-</h2>
+          <h3>
+            Fizika
+          </h3>
 
-<p>
-Hər gün öz rekordunu qır.
-Düşün, cavablandır və biliklərini gücləndir.
-</p>
+          <p>
+            Mexanika, qüvvə, enerji,
+            elektrik və digər mövzular.
+          </p>
 
-</div>
+          <div class="card-label">
+            TESTƏ BAŞLA →
+          </div>
 
-</section>
+        </div>
+
+
+        <!-- ENGLISH -->
+
+        <div
+          class="card english"
+          onclick="selectSubject('english')"
+        >
+
+          <div class="icon">
+            🌍
+          </div>
+
+          <h3>
+            English
+          </h3>
+
+          <p>
+            Grammar, vocabulary,
+            reading və daha çox.
+          </p>
+
+          <div class="card-label">
+            START TEST →
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="container">
+
+    <div class="challenge">
+
+      <h2>
+        🔥 Gündəlik Challenge
+      </h2>
+
+      <p>
+        Hər gün öz rekordunu qır.
+        Daha çox sual həll et,
+        XP topla və inkişafını gör.
+      </p>
+
+    </div>
+
+  </section>
 
 
 </main>
 
 
-
-<!-- SELECTION -->
-
-<div
-id="selection"
-class="panel hidden"
->
-
-<span
-class="back"
-onclick="goHome()"
->
-← Geri
-</span>
-
-<h2 id="subjectTitle">
-Fənn
-</h2>
-
-<br>
-
-<p style="color:#aaa9c8">
-🎓 Sinif seç
-</p>
-
-
-<div class="options">
-
-<button
-class="option class-option"
-onclick="startTest('7')"
->
-<span class="class-number">7-ci sinif</span>
-<span class="class-info">Biliklərini yoxla</span>
-</button>
-
-<button
-class="option class-option"
-onclick="startTest('8')"
->
-<span class="class-number">8-ci sinif</span>
-<span class="class-info">Yeni səviyyəyə keç</span>
-</button>
-
-<button
-class="option class-option"
-onclick="startTest('9')"
->
-<span class="class-number">9-cu sinif</span>
-<span class="class-info">Özünü sına</span>
-</button>
-
-<button
-class="option class-option"
-onclick="startTest('10')"
->
-<span class="class-number">10-cu sinif</span>
-<span class="class-info">Daha çətin suallar</span>
-</button>
-
-<button
-class="option class-option"
-onclick="startTest('11')"
->
-<span class="class-number">11-ci sinif</span>
-<span class="class-info">İmtahan səviyyəsinə yaxın</span>
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- QUIZ -->
+<!-- =======================================
+     SELECTION
+======================================= -->
 
 <div
-id="quiz"
-class="panel hidden"
+  id="selection"
+  class="panel hidden"
 >
 
-<div class="quiz-top">
+
+  <span
+    class="back"
+    onclick="goHome()"
+  >
+    ← Geri
+  </span>
+
+
+  <h2 id="subjectTitle">
+    Fənn
+  </h2>
+
+
+  <br>
+
+
+  <p style="color:#aaa9c8">
+    🎓 Sinif seç
+  </p>
+
+
+  <div class="options">
+
+
+    <button
+      class="option"
+      onclick="selectClass('7')"
+    >
+      📘 7-ci sinif
+    </button>
+
+
+    <button
+      class="option"
+      onclick="selectClass('8')"
+    >
+      📗 8-ci sinif
+    </button>
+
+
+    <button
+      class="option"
+      onclick="selectClass('9')"
+    >
+      📙 9-cu sinif
+    </button>
+
+
+    <button
+      class="option"
+      onclick="selectClass('10')"
+    >
+      📕 10-cu sinif
+    </button>
+
+
+    <button
+      class="option"
+      onclick="selectClass('11')"
+    >
+      🎓 11-ci sinif
+    </button>
+
+
+  </div>
+
+
+</div>
+
+
+<!-- =======================================
+     QUIZ
+======================================= -->
 
 <div
-id="questionNumber"
-class="question-number"
+  id="quiz"
+  class="panel hidden"
 >
-1 / 10
+
+
+  <div class="quiz-top">
+
+
+    <div
+      id="questionNumber"
+      class="question-number"
+    >
+      1 / 10
+    </div>
+
+
+    <div
+      id="timer"
+      class="timer"
+    >
+      ⏱️ 180s
+    </div>
+
+
+  </div>
+
+
+  <div class="progress">
+
+    <div
+      id="progressBar"
+      class="progress-bar"
+    ></div>
+
+  </div>
+
+
+  <div
+    id="question"
+    class="question"
+  >
+    Sual yüklənir...
+  </div>
+
+
+  <div
+    id="answers"
+    class="options"
+  >
+  </div>
+
+
 </div>
+
+
+<!-- =======================================
+     RESULT
+======================================= -->
 
 <div
-class="timer"
-id="timer"
->
-⏱️ 120s
-</div>
-
-</div>
-
-
-<div class="progress">
-
-<div
-id="progressBar"
-class="progress-bar"
-></div>
-
-</div>
-
-
-<div
-id="question"
-class="question"
->
-Sual yüklənir...
-</div>
-
-
-<div
-id="answers"
-class="options"
->
-</div>
-
-</div>
-
-
-
-<!-- RESULT -->
-
-<div
-id="resultPanel"
-class="panel hidden"
+  id="resultPanel"
+  class="panel hidden"
 >
 
-<div class="result">
 
-<div class="result-icon">
-🎉
-</div>
+  <div class="result">
 
-<h2>
-Test tamamlandı!
-</h2>
 
-<div class="score">
+    <div class="result-icon">
+      🎉
+    </div>
 
-<span id="score">
-0
-</span>
 
-/10
+    <h2>
+      Test tamamlandı!
+    </h2>
 
-</div>
 
-<p id="resultText">
-</p>
+    <div class="score">
 
-<div
-id="review"
-class="review"
->
-</div>
+      <span id="score">
+        0
+      </span>
 
-<button
-class="primary"
-onclick="startAnotherTest()"
->
-🔄 Yeni test
-</button>
+      /10
 
-<button
-class="secondary"
-onclick="goHome()"
->
-🏠 Ana səhifə
-</button>
+    </div>
 
-</div>
+
+    <p id="resultText">
+    </p>
+
+
+    <button
+      class="primary"
+      onclick="goHome()"
+    >
+      🏠 Ana səhifə
+    </button>
+
+
+  </div>
+
 
 </div>
 
 
-
-<!-- FOOTER -->
+<!-- =======================================
+     FOOTER
+======================================= -->
 
 <footer>
 
-<div class="container footer">
-
-<div>
-
-<div class="footer-brand">
-QWUİZY
-</div>
-
-<div class="footer-note">
-İrad və ya tövsiyyələr üçün əlaqə:
-</div>
-
-</div>
+  <div class="container footer">
 
 
-<a
-class="tiktok"
-href="https://www.tiktok.com/@ssamirreds"
-target="_blank"
-rel="noopener noreferrer"
->
-♪ TikTok: ssamirreds ↗
-</a>
+    <div>
 
-</div>
+      <div class="footer-brand">
+        QWUİZY
+      </div>
+
+      <div class="footer-note">
+        İrad və ya tövsiyyələr üçün əlaqə:
+      </div>
+
+    </div>
+
+
+    <a
+      class="tiktok"
+      href="https://www.tiktok.com/@ssamirreds"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ♪ TikTok: ssamirreds ↗
+    </a>
+
+
+  </div>
 
 </footer>
 
 
-
 <script>
 
-/* ==========================================
-   QWUİZY — TEST ENGINE
-========================================== */
+/* =========================================
+   QWUİZY QUIZ SYSTEM
+========================================= */
 
 
-/* DATA */
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
 
 let questions = {};
 
@@ -1127,754 +1265,493 @@ let currentQuestion = 0;
 
 let score = 0;
 
-let timeLeft = 120;
+let timeLeft = 180;
 
 let timerInterval = null;
 
-let answeredQuestions = [];
 
-
-/* ==========================================
+/* =========================================
    XP
-========================================== */
+========================================= */
 
 let xp =
-Number(
-localStorage.getItem("qwuizyXP")
-) || 0;
+  Number(
+    localStorage.getItem("qwuizyXP")
+  ) || 0;
 
 
 document.getElementById("xp")
-.textContent = xp;
+  .textContent = xp;
 
 
-
-/* ==========================================
+/* =========================================
    GÖRÜLMÜŞ SUALLAR
-========================================== */
+========================================= */
 
 let seenQuestions =
-JSON.parse(
-localStorage.getItem(
-"qwuizySeenQuestions"
-)
-) || {};
+  JSON.parse(
+    localStorage.getItem(
+      "qwuizySeenQuestions"
+    ) || "{}"
+  );
 
 
-
-/* ==========================================
+/* =========================================
    QUESTIONS.JSON YÜKLƏ
-========================================== */
+========================================= */
 
-fetch("./questions.json")
+async function loadQuestions(){
 
-.then(response => {
+  try{
 
-if(!response.ok){
+    const response =
+      await fetch(
+        "./questions.json",
+        {
+          cache:"no-store"
+        }
+      );
 
-throw new Error(
-"questions.json tapılmadı"
-);
+
+    if(!response.ok){
+
+      throw new Error(
+        "questions.json tapılmadı"
+      );
+
+    }
+
+
+    questions =
+      await response.json();
+
+
+    console.log(
+      "✅ Qwuizy sual bazası yükləndi",
+      questions
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    alert(
+      "⚠️ Sual bazası yüklənmədi!\n\n" +
+      "questions.json faylının " +
+      "index.html ilə eyni qovluqda " +
+      "olduğuna əmin ol."
+    );
+
+  }
 
 }
 
-return response.json();
 
-})
+/* Sayt açılan kimi */
 
-.then(data => {
-
-questions = data;
-
-console.log(
-"Qwuizy sual bazası uğurla yükləndi:",
-questions
-);
-
-})
-
-.catch(error => {
-
-console.error(
-"SUALLAR YÜKLƏNMƏDI:",
-error
-);
-
-alert(
-"⚠️ Sual bazası yüklənmədi!\n\nGitHub-da questions.json faylının olduğuna əmin ol."
-);
-
-});
+loadQuestions();
 
 
-
-/* ==========================================
-   SUBJECT
-========================================== */
+/* =========================================
+   FƏNN SEÇ
+========================================= */
 
 function selectSubject(selected){
 
-subject = selected;
-
-document.getElementById(
-"home"
-).classList.add("hidden");
-
-document.getElementById(
-"selection"
-).classList.remove("hidden");
+  subject = selected;
 
 
-let names = {
-
-riyaziyyat:
-"📐 Riyaziyyat",
-
-fizika:
-"⚡ Fizika",
-
-english:
-"🌍 English"
-
-};
+  document
+    .getElementById("home")
+    .classList.add("hidden");
 
 
-document.getElementById(
-"subjectTitle"
-).textContent =
-names[selected];
+  document
+    .getElementById("selection")
+    .classList.remove("hidden");
 
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+  const names = {
+
+    riyaziyyat:
+      "📐 Riyaziyyat",
+
+    fizika:
+      "⚡ Fizika",
+
+    english:
+      "🌍 English"
+
+  };
+
+
+  document.getElementById(
+    "subjectTitle"
+  ).textContent =
+    names[selected];
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
 
+/* =========================================
+   SİNİF SEÇ
+========================================= */
 
-/* ==========================================
-   SEEN KEY
-========================================== */
+function selectClass(level){
+
+  classLevel =
+    String(level);
+
+
+  startTest();
+
+}
+
+
+/* =========================================
+   GÖRÜLMÜŞ SUALLAR ÜÇÜN KEY
+========================================= */
 
 function getSeenKey(){
 
-return (
-subject +
-"_" +
-classLevel
-);
+  return (
+    subject +
+    "_" +
+    classLevel
+  );
 
 }
 
 
-
-/* ==========================================
-   AVAILABLE QUESTIONS
-========================================== */
+/* =========================================
+   GÖRÜLMƏMİŞ SUALLAR
+========================================= */
 
 function getAvailableQuestions(bank){
 
-const key =
-getSeenKey();
-
-const seen =
-seenQuestions[key] || [];
+  const key =
+    getSeenKey();
 
 
-return bank.filter(
-q =>
-!seen.includes(q.id)
-);
-
-}
+  const seen =
+    seenQuestions[key] || [];
 
 
-
-/* ==========================================
-   SAVE SEEN QUESTION
-========================================== */
-
-function saveQuestionAsSeen(q){
-
-const key =
-getSeenKey();
-
-
-if(!seenQuestions[key]){
-
-seenQuestions[key] = [];
+  return bank.filter(
+    question =>
+      !seen.includes(
+        question.id
+      )
+  );
 
 }
 
 
-if(
-!seenQuestions[key].includes(q.id)
-){
+/* =========================================
+   SUALI GÖRÜLMÜŞ KİMİ SAXLA
+========================================= */
 
-seenQuestions[key].push(q.id);
+function markAsSeen(question){
+
+  const key =
+    getSeenKey();
+
+
+  if(!seenQuestions[key]){
+
+    seenQuestions[key] = [];
+
+  }
+
+
+  if(
+    !seenQuestions[key]
+      .includes(question.id)
+  ){
+
+    seenQuestions[key]
+      .push(question.id);
+
+  }
+
+
+  localStorage.setItem(
+    "qwuizySeenQuestions",
+    JSON.stringify(
+      seenQuestions
+    )
+  );
 
 }
 
 
-localStorage.setItem(
-"qwuizySeenQuestions",
-JSON.stringify(
-seenQuestions
-)
-);
-
-}
-
-
-
-/* ==========================================
+/* =========================================
    RANDOM
-========================================== */
+========================================= */
 
 function shuffle(array){
 
-let arr = [...array];
-
-for(
-let i = arr.length - 1;
-i > 0;
-i--
-){
-
-let j =
-Math.floor(
-Math.random() *
-(i + 1)
-);
-
-[
-arr[i],
-arr[j]
-] =
-[
-arr[j],
-arr[i]
-];
-
-}
-
-return arr;
-
-}
+  const copy =
+    [...array];
 
 
+  for(
+    let i = copy.length - 1;
+    i > 0;
+    i--
+  ){
 
-/* ==========================================
-   START TEST
-========================================== */
-
-function startTest(selectedClass){
-
-classLevel =
-String(selectedClass);
+    const j =
+      Math.floor(
+        Math.random() *
+        (i + 1)
+      );
 
 
-/* SUAL BAZASINI YOXLAYIR */
+    [
+      copy[i],
+      copy[j]
+    ] =
+    [
+      copy[j],
+      copy[i]
+    ];
 
-if(
-!questions ||
-!questions[subject]
-){
+  }
 
-alert(
-"⚠️ Bu fənnin sual bazası tapılmadı."
-);
 
-return;
+  return copy;
 
 }
 
 
-if(
-!questions[subject][classLevel]
-){
+/* =========================================
+   TEST BAŞLAT
+========================================= */
 
-alert(
-`⚠️ ${classLevel}-ci sinif üçün hələ sual bankı əlavə edilməyib.`
-);
+function startTest(){
 
-return;
+  if(!subject){
+
+    alert(
+      "Əvvəlcə fənn seç."
+    );
+
+    return;
+
+  }
+
+
+  if(!classLevel){
+
+    alert(
+      "Əvvəlcə sinif seç."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    !questions ||
+    Object.keys(questions).length === 0
+  ){
+
+    alert(
+      "⏳ Suallar hələ yüklənir. " +
+      "Bir neçə saniyə sonra yenidən yoxla."
+    );
+
+    return;
+
+  }
+
+
+  if(!questions[subject]){
+
+    alert(
+      "⚠️ Bu fənnin sual bazası tapılmadı."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    !questions[subject][classLevel]
+  ){
+
+    alert(
+      "⚠️ Bu sinif üçün hələ sual yoxdur."
+    );
+
+    return;
+
+  }
+
+
+  const bank =
+    questions[
+      subject
+    ][
+      classLevel
+    ];
+
+
+  let available =
+    getAvailableQuestions(
+      bank
+    );
+
+
+  /* =====================================
+     BÜTÜN SUALLAR BİTİBSƏ
+  ===================================== */
+
+  if(
+    available.length === 0
+  ){
+
+    alert(
+      "🎉 Təbriklər!\n\n" +
+      "Bu fənn və sinif üzrə " +
+      "bütün sualları artıq həll etmisən!"
+    );
+
+    return;
+
+  }
+
+
+  /* =====================================
+     RANDOM
+  ===================================== */
+
+  available =
+    shuffle(
+      available
+    );
+
+
+  /* =====================================
+     10 SUAL
+  ===================================== */
+
+  testQuestions =
+    available.slice(
+      0,
+      10
+    );
+
+
+  /* =====================================
+     RESET
+  ===================================== */
+
+  currentQuestion = 0;
+
+  score = 0;
+
+
+  /* =====================================
+     EKRAN
+  ===================================== */
+
+  document
+    .getElementById("selection")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("quiz")
+    .classList.remove("hidden");
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+
+  showQuestion();
 
 }
 
 
-let bank =
-questions[subject][classLevel];
-
-
-/* GÖRÜLMƏMİŞ SUALLAR */
-
-let available =
-getAvailableQuestions(bank);
-
-
-/* HAMISI BİTİBSƏ */
-
-if(
-available.length === 0
-){
-
-alert(
-"🎉 Təbriklər!\n\nBu fənn və sinif üzrə bütün sualları artıq həll etmisən!"
-);
-
-return;
-
-}
-
-
-/* RANDOM */
-
-available =
-shuffle(available);
-
-
-/* 10 SUAL */
-
-testQuestions =
-available.slice(
-0,
-Math.min(10,available.length)
-);
-
-
-/* RESET */
-
-currentQuestion = 0;
-
-score = 0;
-
-answeredQuestions = [];
-
-
-/* EKRAN */
-
-document.getElementById(
-"selection"
-)
-.classList.add("hidden");
-
-
-document.getElementById(
-"resultPanel"
-)
-.classList.add("hidden");
-
-
-document.getElementById(
-"quiz"
-)
-.classList.remove("hidden");
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-
-showQuestion();
-
-}
-
-
-
-/* ==========================================
-   SHOW QUESTION
-========================================== */
+/* =========================================
+   SUALI GÖSTƏR
+========================================= */
 
 function showQuestion(){
 
-clearInterval(
-timerInterval
-);
+  clearInterval(
+    timerInterval
+  );
 
 
-timeLeft = 120;
+  timeLeft = 180;
 
 
-let timer =
-document.getElementById(
-"timer"
-);
+  const timer =
+    document.getElementById(
+      "timer"
+    );
 
 
-timer.textContent =
-"⏱️ " +
-timeLeft +
-"s";
+  timer.textContent =
+    `⏱️ ${timeLeft}s`;
 
 
-timer.classList.remove(
-"danger"
-);
+  timer.classList.remove(
+    "danger"
+  );
 
 
-timerInterval =
-setInterval(()=>{
+  /* =====================================
+     TIMER
+  ===================================== */
 
-timeLeft--;
+  timerInterval =
+    setInterval(
+      () => {
 
-timer.textContent =
-"⏱️ " +
-timeLeft +
-"s";
+        timeLeft--;
 
 
-if(
-timeLeft <= 30
-){
+        timer.textContent =
+          `⏱️ ${timeLeft}s`;
 
-timer.classList.add(
-"danger"
-);
 
-}
+        if(
+          timeLeft <= 30
+        ){
 
+          timer.classList.add(
+            "danger"
+          );
 
-if(
-timeLeft <= 0
-){
+        }
 
-clearInterval(
-timerInterval
-);
 
-nextQuestion(-1);
+        if(
+          timeLeft <= 0
+        ){
 
-}
+          clearInterval(
+            timerInterval
+          );
 
-},1000);
 
+          nextQuestion(-1);
 
-
-let q =
-testQuestions[
-currentQuestion
-];
-
-
-document.getElementById(
-"questionNumber"
-)
-.textContent =
-`${currentQuestion + 1} / ${testQuestions.length}`;
-
-
-document.getElementById(
-"progressBar"
-)
-.style.width =
-`${(
-currentQuestion /
-testQuestions.length
-) * 100}%`;
-
-
-document.getElementById(
-"question"
-)
-.textContent =
-q.question;
-
-
-let answers =
-document.getElementById(
-"answers"
-);
-
-
-answers.innerHTML = "";
-
-
-q.answers.forEach(
-(answer,index)=>{
-
-let button =
-document.createElement(
-"button"
-);
-
-
-button.className =
-"option";
-
-
-button.textContent =
-answer;
-
-
-button.onclick =
-()=>{
-
-nextQuestion(index);
-
-};
-
-
-answers.appendChild(
-button
-);
-
-});
-
-}
-
-
-
-/* ==========================================
-   NEXT QUESTION
-========================================== */
-
-function nextQuestion(answer){
-
-clearInterval(
-timerInterval
-);
-
-
-let q =
-testQuestions[
-currentQuestion
-];
-
-
-/* YALNIZ CAVAB VERİLƏNDƏ
-SUALI YADDA SAXLA */
-
-if(answer !== -1){
-
-saveQuestionAsSeen(q);
-
-}
-
-
-/* NƏTİCƏNİ YADDA SAXLA */
-
-answeredQuestions.push({
-
-question:q.question,
-
-answers:q.answers,
-
-correct:q.correct,
-
-userAnswer:answer,
-
-explanation:q.explanation || ""
-
-});
-
-
-/* DÜZGÜN CAVAB */
-
-if(
-answer === q.correct
-){
-
-score++;
-
-xp += 10;
-
-
-localStorage.setItem(
-"qwuizyXP",
-xp
-);
-
-
-document.getElementById(
-"xp"
-)
-.textContent =
-xp;
-
-}
-
-
-/* NÖVBƏTİ */
-
-currentQuestion++;
-
-
-/* TEST BİTDİ */
-
-if(
-currentQuestion >=
-testQuestions.length
-){
-
-finishTest();
-
-return;
-
-}
-
-
-/* YENİ SUAL */
-
-showQuestion();
-
-}
-
-
-
-/* ==========================================
-   FINISH TEST
-========================================== */
-
-function finishTest(){
-
-clearInterval(
-timerInterval
-);
-
-
-document.getElementById(
-"quiz"
-)
-.classList.add("hidden");
-
-
-document.getElementById(
-"resultPanel"
-)
-.classList.remove("hidden");
-
-
-document.getElementById(
-"score"
-)
-.textContent =
-score;
-
-
-let total =
-testQuestions.length;
-
-
-let percent =
-Math.round(
-(score / total) * 100
-);
-
-
-let message;
-
-
-if(
-percent >= 90
-){
-
-message =
-"🔥 Möhtəşəm nəticə! Sən həqiqətən güclüsən.";
-
-}
-
-else if(
-percent >= 70
-){
-
-message =
-"💪 Çox yaxşı! Bir az da məşq et və daha yüksək nəticə al.";
-
-}
-
-else if(
-percent >= 50
-){
-
-message =
-"📈 Pis deyil! Daha çox məşq etsən nəticən artacaq.";
-
-}
-
-else{
-
-message =
-"🧠 Təslim olma! Səhvlərini öyrən və yenidən cəhd et.";
-
-}
-
-
-document.getElementById(
-"resultText"
-)
-.textContent =
-`${message} ${score * 10} XP qazandın!`;
-
-
-/* SƏHVLƏR */
-
-let review =
-document.getElementById(
-"review"
-);
-
-
-review.innerHTML = "";
-
-
-let wrongAnswers =
-answeredQuestions.filter(
-item =>
-item.userAnswer !== item.correct
-);
-
-
-if(wrongAnswers.length === 0){
-
-review.innerHTML = `
-<div class="review-item">
-  <div class="review-question">
-    🏆 Bütün suallara düzgün cavab verdin!
-  </div>
-  <div class="review-correct">
-    Səhvin yoxdur. Möhtəşəm nəticə!
-  </div>
-</div>
-`;
-
-}else{
-
-wrongAnswers.forEach(
-(item,index)=>{
-
-let userAnswer =
-item.userAnswer === -1
-? "Cavablandırılmadı"
-: item.answers[item.userAnswer];
-
-
-let correctAnswer =
-item.answers[item.correct];
-
-
-let div =
-document.createElement("div");
-
-
-div.className =
-"review-item";
-
-
-div.innerHTML = `
-
-<div class="review-question">
-${index + 1}. ${escapeHtml(item.question)}
-</div>
-
-<div class="review-wrong">
-❌ Sənin cavabın: ${escapeHtml(userAnswer)}
-</div>
-
-<div class="review-correct">
-✅ Düzgün cavab: ${escapeHtml(correctAnswer)}
-</d
+ 
