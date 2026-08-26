@@ -1,0 +1,50 @@
+{
+  "riyaziyyat": {
+    "11": [
+      {
+        "id": "math11_001",
+        "topic": "Funksiyalar",
+        "difficulty": "hard",
+        "question": "f(x) = x² - 4x + 7 funksiyasının minimum qiyməti neçədir?",
+        "answers": ["2", "3", "4", "7"],
+        "correct": 1,
+        "explanation": "f(x) = (x - 2)² + 3. Kvadrat ifadə minimumda 0 olduğuna görə minimum qiymət 3-dür."
+      },
+      {
+        "id": "math11_002",
+        "topic": "Tənliklər",
+        "difficulty": "expert",
+        "question": "2x² - 5x - 3 = 0 tənliyinin köklərinin cəmi neçədir?",
+        "answers": ["-5/2", "5/2", "3/2", "-3/2"],
+        "correct": 1,
+        "explanation": "Köklərin cəmi -b/a düsturu ilə tapılır: 5/2."
+      }
+    ]
+  },
+  "fizika": {
+    "11": [
+      {
+        "id": "phys11_001",
+        "topic": "Mexanika",
+        "difficulty": "hard",
+        "question": "Cisim 20 m/s başlanğıc sürətlə 2 m/s² təcillə 5 saniyə hərəkət edir. Son sürəti neçə m/s olar?",
+        "answers": ["25", "30", "35", "40"],
+        "correct": 1,
+        "explanation": "v = v₀ + at = 20 + 2 × 5 = 30 m/s."
+      }
+    ]
+  },
+  "english": {
+    "11": [
+      {
+        "id": "eng11_001",
+        "topic": "Grammar",
+        "difficulty": "hard",
+        "question": "If I ___ enough time, I would have helped you.",
+        "answers": ["had", "have", "had had", "will have"],
+        "correct": 2,
+        "explanation": "Keçmişdə baş verməmiş vəziyyət üçün Third Conditional istifadə olunur."
+      }
+    ]
+  }
+}
