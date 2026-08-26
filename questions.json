@@ -1,50 +1,456 @@
 {
   "riyaziyyat": {
-    "11": [
+    "7": [
       {
-        "id": "math11_001",
-        "topic": "Funksiyalar",
-        "difficulty": "hard",
-        "question": "f(x) = x² - 4x + 7 funksiyasının minimum qiyməti neçədir?",
-        "answers": ["2", "3", "4", "7"],
+        "id": "math7_001",
+        "topic": "Ədədi ifadələr",
+        "difficulty": "medium",
+        "question": "48 : 6 + 3 × 5 ifadəsinin qiyməti neçədir?",
+        "answers": ["23", "29", "35", "40"],
         "correct": 1,
-        "explanation": "f(x) = (x - 2)² + 3. Kvadrat ifadə minimumda 0 olduğuna görə minimum qiymət 3-dür."
+        "explanation": "Əvvəl bölmə və vurma yerinə yetirilir: 48 : 6 = 8, 3 × 5 = 15. Sonra 8 + 15 = 23."
       },
       {
-        "id": "math11_002",
-        "topic": "Tənliklər",
-        "difficulty": "expert",
-        "question": "2x² - 5x - 3 = 0 tənliyinin köklərinin cəmi neçədir?",
-        "answers": ["-5/2", "5/2", "3/2", "-3/2"],
-        "correct": 1,
-        "explanation": "Köklərin cəmi -b/a düsturu ilə tapılır: 5/2."
-      }
-    ]
-  },
-  "fizika": {
-    "11": [
+        "id": "math7_002",
+        "topic": "Tam ədədlər",
+        "difficulty": "medium",
+        "question": "−7 + 12 − 5 ifadəsinin qiyməti neçədir?",
+        "answers": ["0", "2", "5", "10"],
+        "correct": 0,
+        "explanation": "−7 + 12 = 5, 5 − 5 = 0."
+      },
       {
-        "id": "phys11_001",
-        "topic": "Mexanika",
-        "difficulty": "hard",
-        "question": "Cisim 20 m/s başlanğıc sürətlə 2 m/s² təcillə 5 saniyə hərəkət edir. Son sürəti neçə m/s olar?",
-        "answers": ["25", "30", "35", "40"],
+        "id": "math7_003",
+        "topic": "Kəsrlər",
+        "difficulty": "medium",
+        "question": "3/4 + 5/8 cəminin qiyməti neçədir?",
+        "answers": ["7/8", "11/8", "13/8", "15/8"],
         "correct": 1,
-        "explanation": "v = v₀ + at = 20 + 2 × 5 = 30 m/s."
-      }
-    ]
-  },
-  "english": {
-    "11": [
+        "explanation": "3/4 = 6/8. Deməli 6/8 + 5/8 = 11/8."
+      },
       {
-        "id": "eng11_001",
-        "topic": "Grammar",
+        "id": "math7_004",
+        "topic": "Kəsrlər",
         "difficulty": "hard",
-        "question": "If I ___ enough time, I would have helped you.",
-        "answers": ["had", "have", "had had", "will have"],
+        "question": "5/6 − 1/4 fərqi neçədir?",
+        "answers": ["1/2", "7/12", "2/3", "3/4"],
+        "correct": 1,
+        "explanation": "Orta məxrəc 12-dir. 5/6 = 10/12, 1/4 = 3/12. Fərq 7/12-dir."
+      },
+      {
+        "id": "math7_005",
+        "topic": "Onluq kəsrlər",
+        "difficulty": "medium",
+        "question": "0,75 × 0,4 hasilini tapın.",
+        "answers": ["0,03", "0,3", "3", "0,34"],
+        "correct": 1,
+        "explanation": "75 × 4 = 300. Ümumi iki onluq rəqəm olduğuna görə nəticə 0,30 = 0,3-dür."
+      },
+      {
+        "id": "math7_006",
+        "topic": "Faiz",
+        "difficulty": "medium",
+        "question": "240 ədədinin 15%-i neçədir?",
+        "answers": ["24", "30", "36", "40"],
         "correct": 2,
-        "explanation": "Keçmişdə baş verməmiş vəziyyət üçün Third Conditional istifadə olunur."
+        "explanation": "240 × 15/100 = 36."
+      },
+      {
+        "id": "math7_007",
+        "topic": "Faiz",
+        "difficulty": "hard",
+        "question": "Bir kitabın qiyməti 80 manatdır. Qiymət 25% artırılarsa, yeni qiymət neçə manat olar?",
+        "answers": ["90", "95", "100", "105"],
+        "correct": 2,
+        "explanation": "80 manatın 25%-i 20 manatdır. 80 + 20 = 100 manat."
+      },
+      {
+        "id": "math7_008",
+        "topic": "Nisbət",
+        "difficulty": "medium",
+        "question": "2 : 5 nisbətində bölünən 35 ədədinin böyük hissəsi neçədir?",
+        "answers": ["14", "20", "25", "30"],
+        "correct": 2,
+        "explanation": "Cəmi hissə 7-dir. 35 : 7 = 5. Böyük hissə 5 × 5 = 25."
+      },
+      {
+        "id": "math7_009",
+        "topic": "Tənliklər",
+        "difficulty": "medium",
+        "question": "3x + 7 = 25 tənliyinin kökü neçədir?",
+        "answers": ["4", "5", "6", "7"],
+        "correct": 2,
+        "explanation": "3x = 18, buna görə x = 6."
+      },
+      {
+        "id": "math7_010",
+        "topic": "Tənliklər",
+        "difficulty": "hard",
+        "question": "5(x − 2) = 3x + 8 tənliyinin kökü neçədir?",
+        "answers": ["7", "8", "9", "10"],
+        "correct": 3,
+        "explanation": "5x − 10 = 3x + 8. 2x = 18. Deməli x = 9."
+      },
+      {
+        "id": "math7_011",
+        "topic": "Tənliklər",
+        "difficulty": "hard",
+        "question": "2(x + 3) − 4 = 3x + 1 tənliyinin kökü neçədir?",
+        "answers": ["−1", "−2", "1", "2"],
+        "correct": 0,
+        "explanation": "2x + 6 − 4 = 3x + 1 → 2x + 2 = 3x + 1 → x = 1. Buna görə düzgün cavab 1-dir.",
+      },
+      {
+        "id": "math7_012",
+        "topic": "Tənliklər",
+        "difficulty": "medium",
+        "question": "7x − 4 = 31 tənliyində x neçədir?",
+        "answers": ["4", "5", "6", "7"],
+        "correct": 1,
+        "explanation": "7x = 35, buna görə x = 5."
+      },
+      {
+        "id": "math7_013",
+        "topic": "Ədədi ifadələr",
+        "difficulty": "hard",
+        "question": "2³ + 3² − 4 ifadəsinin qiyməti neçədir?",
+        "answers": ["11", "13", "15", "17"],
+        "correct": 1,
+        "explanation": "2³ = 8, 3² = 9. 8 + 9 − 4 = 13."
+      },
+      {
+        "id": "math7_014",
+        "topic": "Qüvvət",
+        "difficulty": "medium",
+        "question": "5² × 5³ ifadəsini qüvvət şəklində necə yazmaq olar?",
+        "answers": ["5⁵", "10⁵", "5⁶", "25⁶"],
+        "correct": 0,
+        "explanation": "Eyni əsaslı qüvvətlər vurulduqda üstlüklər toplanır: 5² × 5³ = 5⁵."
+      },
+      {
+        "id": "math7_015",
+        "topic": "Qüvvət",
+        "difficulty": "hard",
+        "question": "2⁵ − 2³ ifadəsinin qiyməti neçədir?",
+        "answers": ["16", "20", "24", "28"],
+        "correct": 2,
+        "explanation": "2⁵ = 32, 2³ = 8. 32 − 8 = 24."
+      },
+      {
+        "id": "math7_016",
+        "topic": "Bölünmə əlamətləri",
+        "difficulty": "medium",
+        "question": "Aşağıdakılardan hansı 3-ə bölünür?",
+        "answers": ["124", "235", "342", "451"],
+        "correct": 2,
+        "explanation": "342-nin rəqəmləri cəmi 3 + 4 + 2 = 9 olduğuna görə 3-ə bölünür."
+      },
+      {
+        "id": "math7_017",
+        "topic": "Bölünmə əlamətləri",
+        "difficulty": "hard",
+        "question": "5□2 ədədinin 3-ə bölünməsi üçün □ yerinə hansı rəqəmlərdən biri yazıla bilər?",
+        "answers": ["1", "2", "4", "6"],
+        "correct": 1,
+        "explanation": "5 + □ + 2 = 7 + □ 3-ə bölünməlidir. □ = 2 olduqda cəm 9 olur."
+      },
+      {
+        "id": "math7_018",
+        "topic": "ƏBOB",
+        "difficulty": "medium",
+        "question": "24 və 36 ədədlərinin ƏBOB-u neçədir?",
+        "answers": ["6", "8", "12", "18"],
+        "correct": 2,
+        "explanation": "24 və 36-nın ən böyük ortaq böləni 12-dir."
+      },
+      {
+        "id": "math7_019",
+        "topic": "ƏKOB",
+        "difficulty": "medium",
+        "question": "6 və 8 ədədlərinin ƏKOB-u neçədir?",
+        "answers": ["12", "18", "24", "48"],
+        "correct": 2,
+        "explanation": "6 və 8-in ən kiçik ortaq bölünəni 24-dür."
+      },
+      {
+        "id": "math7_020",
+        "topic": "Məntiq",
+        "difficulty": "hard",
+        "question": "Bir ədədin 3 misli ilə həmin ədədin cəmi 28-dir. Bu ədəd neçədir?",
+        "answers": ["5", "6", "7", "8"],
+        "correct": 2,
+        "explanation": "x + 3x = 28 → 4x = 28 → x = 7."
+      },
+      {
+        "id": "math7_021",
+        "topic": "Nisbət",
+        "difficulty": "hard",
+        "question": "Qızların oğlanlara nisbəti 3:5-dir. Sinifdə 32 şagird varsa, oğlanların sayı neçədir?",
+        "answers": ["12", "18", "20", "24"],
+        "correct": 2,
+        "explanation": "Ümumi hissə 8-dir. 32 : 8 = 4. Oğlanlar 5 × 4 = 20 nəfərdir."
+      },
+      {
+        "id": "math7_022",
+        "topic": "Faiz",
+        "difficulty": "hard",
+        "question": "Bir ədəd 20% artırıldıqdan sonra 72 alınır. İlkin ədəd neçə idi?",
+        "answers": ["50", "55", "60", "65"],
+        "correct": 2,
+        "explanation": "İlkin ədədin 120%-i 72-dir. 72 : 1,2 = 60."
+      },
+      {
+        "id": "math7_023",
+        "topic": "Tam ədədlər",
+        "difficulty": "medium",
+        "question": "−8 və 5 ədədləri arasındakı məsafə neçə vahiddir?",
+        "answers": ["3", "8", "13", "15"],
+        "correct": 2,
+        "explanation": "Ədədlər arasındakı məsafə |−8 − 5| = 13-dür."
+      },
+      {
+        "id": "math7_024",
+        "topic": "Tam ədədlər",
+        "difficulty": "hard",
+        "question": "−3 × (−7) + 4 ifadəsinin qiyməti neçədir?",
+        "answers": ["17", "21", "25", "−17"],
+        "correct": 2,
+        "explanation": "−3 × −7 = 21. 21 + 4 = 25."
+      },
+      {
+        "id": "math7_025",
+        "topic": "Kəsrlər",
+        "difficulty": "medium",
+        "question": "2/3 × 9/4 hasilinin qiyməti neçədir?",
+        "answers": ["1", "3/2", "2", "3"],
+        "correct": 2,
+        "explanation": "(2 × 9)/(3 × 4) = 18/12 = 3/2. Buna görə düzgün cavab 3/2-dir.",
+      },
+      {
+        "id": "math7_026",
+        "topic": "Kəsrlər",
+        "difficulty": "hard",
+        "question": "5/6 : 10/9 bölməsinin nəticəsi neçədir?",
+        "answers": ["2/3", "3/4", "5/9", "4/5"],
+        "correct": 1,
+        "explanation": "5/6 × 9/10 = 45/60 = 3/4."
+      },
+      {
+        "id": "math7_027",
+        "topic": "Onluq kəsrlər",
+        "difficulty": "medium",
+        "question": "4,8 : 0,6 bölməsinin nəticəsi neçədir?",
+        "answers": ["6", "7", "8", "9"],
+        "correct": 2,
+        "explanation": "Hər iki ədədi 10-a vururuq: 48 : 6 = 8."
+      },
+      {
+        "id": "math7_028",
+        "topic": "Tənliklər",
+        "difficulty": "hard",
+        "question": "4x − 7 = 2x + 11 tənliyinin kökü neçədir?",
+        "answers": ["7", "8", "9", "10"],
+        "correct": 2,
+        "explanation": "4x − 2x = 11 + 7 → 2x = 18 → x = 9."
+      },
+      {
+        "id": "math7_029",
+        "topic": "Həndəsə",
+        "difficulty": "medium",
+        "question": "Tərəfləri 8 sm və 5 sm olan düzbucaqlının sahəsi neçə sm²-dir?",
+        "answers": ["13", "26", "40", "80"],
+        "correct": 2,
+        "explanation": "S = a × b = 8 × 5 = 40 sm²."
+      },
+      {
+        "id": "math7_030",
+        "topic": "Həndəsə",
+        "difficulty": "medium",
+        "question": "Tərəfi 9 sm olan kvadratın perimetri neçə sm-dir?",
+        "answers": ["18", "27", "36", "81"],
+        "correct": 2,
+        "explanation": "Kvadratın perimetri P = 4a = 4 × 9 = 36 sm."
+      },
+      {
+        "id": "math7_031",
+        "topic": "Həndəsə",
+        "difficulty": "hard",
+        "question": "Düzbucaqlının perimetri 34 sm, uzunluğu 10 sm-dir. Eni neçə sm-dir?",
+        "answers": ["5", "6", "7", "8"],
+        "correct": 2,
+        "explanation": "2(10 + b) = 34 → 10 + b = 17 → b = 7."
+      },
+      {
+        "id": "math7_032",
+        "topic": "Həndəsə",
+        "difficulty": "hard",
+        "question": "Üçbucağın iki bucağı 48° və 67°-dir. Üçüncü bucaq neçə dərəcədir?",
+        "answers": ["55°", "65°", "75°", "85°"],
+        "correct": 1,
+        "explanation": "Üçbucağın daxili bucaqlarının cəmi 180°-dir. 180 − 48 − 67 = 65°."
+      },
+      {
+        "id": "math7_033",
+        "topic": "Həndəsə",
+        "difficulty": "medium",
+        "question": "Düz bucağın ölçüsü neçə dərəcədir?",
+        "answers": ["90°", "120°", "180°", "360°"],
+        "correct": 2,
+        "explanation": "Düz bucaq 180°-yə bərabərdir."
+      },
+      {
+        "id": "math7_034",
+        "topic": "Həndəsə",
+        "difficulty": "hard",
+        "question": "Bir bucaq 38°-dirsə, ona tamamlayıcı bucaq neçə dərəcədir?",
+        "answers": ["42°", "52°", "62°", "142°"],
+        "correct": 1,
+        "explanation": "Tamamlayıcı bucaqların cəmi 90°-dir. 90 − 38 = 52°."
+      },
+      {
+        "id": "math7_035",
+        "topic": "Həndəsə",
+        "difficulty": "hard",
+        "question": "Bir düz xətt üzərində yanaşı bucaqlardan biri 73°-dirsə, digəri neçə dərəcədir?",
+        "answers": ["97°", "107°", "117°", "127°"],
+        "correct": 0,
+        "explanation": "Yanaşı bucaqların cəmi 180°-dir. 180 − 73 = 107°. Buna görə düzgün cavab 107°-dir."
+      },
+      {
+        "id": "math7_036",
+        "topic": "Koordinat sistemi",
+        "difficulty": "medium",
+        "question": "A(−3; 5) nöqtəsinin absisi neçədir?",
+        "answers": ["−3", "3", "5", "−5"],
+        "correct": 0,
+        "explanation": "Nöqtənin birinci koordinatı absis adlanır. Buna görə absis −3-dür."
+      },
+      {
+        "id": "math7_037",
+        "topic": "Koordinat sistemi",
+        "difficulty": "medium",
+        "question": "B(4; −7) nöqtəsinin ordinatı neçədir?",
+        "answers": ["4", "−4", "7", "−7"],
+        "correct": 3,
+        "explanation": "İkinci koordinat ordinatdır. Buna görə ordinat −7-dir."
+      },
+      {
+        "id": "math7_038",
+        "topic": "Ədədi orta",
+        "difficulty": "medium",
+        "question": "6, 10, 14 və 18 ədədlərinin ədədi ortası neçədir?",
+        "answers": ["10", "11", "12", "13"],
+        "correct": 2,
+        "explanation": "(6 + 10 + 14 + 18) : 4 = 48 : 4 = 12."
+      },
+      {
+        "id": "math7_039",
+        "topic": "Ədədi orta",
+        "difficulty": "hard",
+        "question": "5 ədədin ədədi ortası 14-dür. Bu ədədlərin cəmi neçədir?",
+        "answers": ["19", "56", "70", "75"],
+        "correct": 2,
+        "explanation": "Ədədi orta = cəm / say. Cəm = 14 × 5 = 70."
+      },
+      {
+        "id": "math7_040",
+        "topic": "Məntiq",
+        "difficulty": "hard",
+        "question": "Ardıcıl üç natural ədədin cəmi 42-dir. Ortadakı ədəd neçədir?",
+        "answers": ["12", "13", "14", "15"],
+        "correct": 2,
+        "explanation": "Ədədlər x−1, x, x+1 formasındadır. Cəm 3x = 42 → x = 14."
+      },
+      {
+        "id": "math7_041",
+        "topic": "Məntiq",
+        "difficulty": "hard",
+        "question": "Bir ədədin yarısına 9 əlavə etdikdə 21 alınır. Ədəd neçədir?",
+        "answers": ["18", "20", "24", "30"],
+        "correct": 2,
+        "explanation": "x/2 + 9 = 21 → x/2 = 12 → x = 24."
+      },
+      {
+        "id": "math7_042",
+        "topic": "Nisbət",
+        "difficulty": "hard",
+        "question": "4 dəftər 12 manatdırsa, eyni qiymətlə 7 dəftər neçə manat olar?",
+        "answers": ["18", "21", "24", "28"],
+        "correct": 1,
+        "explanation": "1 dəftər 12 : 4 = 3 manatdır. 7 dəftər 7 × 3 = 21 manatdır."
+      },
+      {
+        "id": "math7_043",
+        "topic": "Faiz",
+        "difficulty": "hard",
+        "question": "500 manatın 8%-i neçə manatdır?",
+        "answers": ["20", "30", "40", "50"],
+        "correct": 2,
+        "explanation": "500 × 8/100 = 40."
+      },
+      {
+        "id": "math7_044",
+        "topic": "Faiz",
+        "difficulty": "hard",
+        "question": "Bir məhsul 120 manatdan 90 manata düşüb. Qiymət neçə faiz azalıb?",
+        "answers": ["20%", "25%", "30%", "35%"],
+        "correct": 1,
+        "explanation": "Azalma 30 manatdır. 30/120 × 100% = 25%."
+      },
+      {
+        "id": "math7_045",
+        "topic": "Ədədi ifadələr",
+        "difficulty": "hard",
+        "question": "36 − [12 − (5 − 9)] ifadəsinin qiyməti neçədir?",
+        "answers": ["20", "28", "32", "40"],
+        "correct": 1,
+        "explanation": "5 − 9 = −4. 12 − (−4) = 16. 36 − 16 = 20. Buna görə düzgün cavab 20-dir."
+      },
+      {
+        "id": "math7_046",
+        "topic": "Qüvvət",
+        "difficulty": "hard",
+        "question": "3² + 4² ifadəsinin qiyməti neçədir?",
+        "answers": ["12", "20", "25", "49"],
+        "correct": 2,
+        "explanation": "3² = 9 və 4² = 16. 9 + 16 = 25."
+      },
+      {
+        "id": "math7_047",
+        "topic": "Həndəsə",
+        "difficulty": "hard",
+        "question": "Kvadratın sahəsi 64 sm²-dirsə, onun tərəfi neçə sm-dir?",
+        "answers": ["6", "7", "8", "16"],
+        "correct": 2,
+        "explanation": "a² = 64 olduğuna görə a = 8 sm."
+      },
+      {
+        "id": "math7_048",
+        "topic": "Həndəsə",
+        "difficulty": "hard",
+        "question": "Düzbucaqlının eni 6 sm, sahəsi 54 sm²-dir. Uzunluğu neçə sm-dir?",
+        "answers": ["7", "8", "9", "10"],
+        "correct": 2,
+        "explanation": "S = a × b. 54 = 6 × a → a = 9 sm."
+      },
+      {
+        "id": "math7_049",
+        "topic": "Məntiq",
+        "difficulty": "expert",
+        "question": "Bir ədədin 40%-i ilə 12-nin cəmi 32-dir. Bu ədəd neçədir?",
+        "answers": ["40", "45", "50", "55"],
+        "correct": 2,
+        "explanation": "0,4x + 12 = 32 → 0,4x = 20 → x = 50."
+      },
+      {
+        "id": "math7_050",
+        "topic": "Məntiq",
+        "difficulty": "expert",
+        "question": "İki ədədin cəmi 41, fərqi isə 9-dur. Böyük ədəd neçədir?",
+        "answers": ["16", "20", "25", "30"],
+        "correct": 2,
+        "explanation": "Böyük ədəd x, kiçik ədəd y olsun. x+y=41 və x−y=9. Tənlikləri topladıqda 2x=50, deməli x=25."
       }
     ]
   }
-}
+      }
