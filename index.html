@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Qwuizy — Biliyini oyuna çevir</title>
 
 <style>
+
+/* ==========================================
+   GENERAL
+========================================== */
 
 *{
   box-sizing:border-box;
@@ -19,84 +28,154 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+  Arial,
+  Helvetica,
+  sans-serif;
+
   color:#fff;
+
   min-height:100vh;
 
   background:
-    radial-gradient(circle at 10% 10%,#6d28d9 0%,transparent 30%),
-    radial-gradient(circle at 90% 15%,#0891b2 0%,transparent 28%),
-    radial-gradient(circle at 70% 90%,#be185d 0%,transparent 30%),
-    #080817;
+
+  radial-gradient(
+    circle at 10% 10%,
+    #6d28d9 0%,
+    transparent 30%
+  ),
+
+  radial-gradient(
+    circle at 90% 15%,
+    #0891b2 0%,
+    transparent 28%
+  ),
+
+  radial-gradient(
+    circle at 70% 90%,
+    #be185d 0%,
+    transparent 30%
+  ),
+
+  #080817;
 }
 
 .container{
-  width:min(1100px,92%);
+
+  width:min(
+    1100px,
+    92%
+  );
+
   margin:auto;
+
 }
 
-/* HEADER */
+.hidden{
+
+  display:none !important;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
 
 header{
+
   padding:20px 0;
 
   border-bottom:
-    1px solid rgba(255,255,255,.1);
+  1px solid
+  rgba(255,255,255,.1);
 
-  backdrop-filter:blur(18px);
+  backdrop-filter:
+  blur(18px);
 
   position:sticky;
+
   top:0;
+
   z-index:100;
+
 }
 
 .nav{
+
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+  space-between;
+
   align-items:center;
+
 }
 
 .logo{
+
   font-size:27px;
+
   font-weight:900;
 
   background:
-    linear-gradient(
-      90deg,
-      #22d3ee,
-      #a78bfa,
-      #f472b6
-    );
+
+  linear-gradient(
+    90deg,
+    #22d3ee,
+    #a78bfa,
+    #f472b6
+  );
 
   -webkit-background-clip:text;
+
   background-clip:text;
 
   color:transparent;
+
 }
 
 .profile{
+
   padding:10px 15px;
 
   border-radius:13px;
 
   background:
-    rgba(255,255,255,.07);
+  rgba(255,255,255,.07);
 
   border:
-    1px solid rgba(255,255,255,.1);
+  1px solid
+  rgba(255,255,255,.1);
 
   font-weight:bold;
+
 }
 
-/* HERO */
+
+/* ==========================================
+   HERO
+========================================== */
 
 .hero{
+
   text-align:center;
-  padding:75px 0 55px;
+
+  padding:
+  75px 0
+  55px;
+
 }
 
 .hero h1{
-  font-size:clamp(48px,9vw,85px);
+
+  font-size:
+  clamp(
+    48px,
+    9vw,
+    85px
+  );
 
   font-weight:900;
 
@@ -105,21 +184,25 @@ header{
   letter-spacing:-5px;
 
   background:
-    linear-gradient(
-      100deg,
-      #fff,
-      #a78bfa,
-      #67e8f9,
-      #f9a8d4
-    );
+
+  linear-gradient(
+    100deg,
+    #fff,
+    #a78bfa,
+    #67e8f9,
+    #f9a8d4
+  );
 
   -webkit-background-clip:text;
+
   background-clip:text;
 
   color:transparent;
+
 }
 
 .hero p{
+
   color:#aaa9c8;
 
   max-width:650px;
@@ -129,36 +212,57 @@ header{
   line-height:1.7;
 
   font-size:16px;
+
 }
 
-/* SECTION */
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
 
 .section-title{
+
   text-align:center;
+
   margin-bottom:28px;
+
 }
 
 .section-title h2{
+
   font-size:30px;
+
 }
 
 .section-title p{
+
   color:#aaa9c8;
+
   margin-top:8px;
+
 }
 
-/* SUBJECTS */
+
+/* ==========================================
+   SUBJECTS
+========================================== */
 
 .subjects{
+
   display:grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+  repeat(
+    3,
+    1fr
+  );
 
   gap:18px;
+
 }
 
 .card{
+
   padding:25px;
 
   min-height:185px;
@@ -166,80 +270,108 @@ header{
   border-radius:23px;
 
   background:
-    rgba(20,20,42,.82);
+  rgba(20,20,42,.82);
 
   border:
-    1px solid rgba(255,255,255,.1);
+  1px solid
+  rgba(255,255,255,.1);
 
   cursor:pointer;
 
   transition:
-    transform .2s,
-    border-color .2s,
-    box-shadow .2s;
+
+  transform .2s,
+  border-color .2s,
+  box-shadow .2s;
 
   position:relative;
+
   overflow:hidden;
+
 }
 
 .card:hover{
-  transform:translateY(-6px);
+
+  transform:
+  translateY(-6px);
 
   border-color:
-    rgba(255,255,255,.3);
+  rgba(255,255,255,.3);
 
   box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.3);
+  0 20px 50px
+  rgba(0,0,0,.3);
+
 }
 
 .card:after{
+
   content:"";
 
   position:absolute;
 
   width:130px;
+
   height:130px;
 
   border-radius:50%;
 
   right:-50px;
+
   bottom:-55px;
 
   filter:blur(10px);
 
   opacity:.4;
+
 }
 
 .math:after{
+
   background:#22d3ee;
+
 }
 
 .physics:after{
+
   background:#8b5cf6;
+
 }
 
 .english:after{
+
   background:#ec4899;
+
 }
 
 .icon{
+
   font-size:38px;
+
   margin-bottom:17px;
+
 }
 
 .card h3{
+
   font-size:20px;
+
   margin-bottom:8px;
+
 }
 
 .card p{
+
   color:#aaa9c8;
+
   font-size:13px;
+
   line-height:1.6;
+
 }
 
 .card-label{
+
   margin-top:17px;
 
   color:#67e8f9;
@@ -247,35 +379,43 @@ header{
   font-size:12px;
 
   font-weight:bold;
+
 }
 
-/* PANELS */
+
+/* ==========================================
+   PANEL
+========================================== */
 
 .panel{
-  width:min(720px,92%);
 
-  margin:35px auto;
+  width:min(
+    720px,
+    92%
+  );
+
+  margin:
+  35px auto;
 
   padding:30px;
 
   border-radius:25px;
 
   background:
-    rgba(17,17,35,.94);
+  rgba(17,17,35,.94);
 
   border:
-    1px solid rgba(255,255,255,.12);
+  1px solid
+  rgba(255,255,255,.12);
 
   box-shadow:
-    0 25px 80px
-    rgba(0,0,0,.25);
-}
+  0 25px 80px
+  rgba(0,0,0,.25);
 
-.hidden{
-  display:none !important;
 }
 
 .back{
+
   display:inline-block;
 
   color:#aaa9c8;
@@ -283,36 +423,48 @@ header{
   cursor:pointer;
 
   margin-bottom:20px;
+
 }
 
 .back:hover{
+
   color:white;
+
 }
 
 .panel h2{
+
   font-size:28px;
+
 }
 
-/* OPTIONS */
+
+/* ==========================================
+   OPTIONS
+========================================== */
 
 .options{
+
   display:grid;
 
   gap:12px;
 
   margin-top:18px;
+
 }
 
 .option{
+
   padding:16px;
 
   border-radius:14px;
 
   background:
-    rgba(255,255,255,.05);
+  rgba(255,255,255,.05);
 
   border:
-    1px solid rgba(255,255,255,.1);
+  1px solid
+  rgba(255,255,255,.1);
 
   color:white;
 
@@ -323,81 +475,102 @@ header{
   font-weight:bold;
 
   transition:.2s;
+
 }
 
 .option:hover{
+
   background:
-    rgba(124,58,237,.2);
+  rgba(124,58,237,.2);
 
   border-color:
-    #8b5cf6;
+  #8b5cf6;
 
-  transform:translateX(3px);
+  transform:
+  translateX(3px);
+
 }
 
-/* QUIZ */
+
+/* ==========================================
+   QUIZ
+========================================== */
 
 .quiz-top{
+
   display:flex;
 
   justify-content:
-    space-between;
+  space-between;
 
   align-items:center;
 
   gap:15px;
 
   margin-bottom:12px;
+
 }
 
 .question-number{
+
   color:#aaa9c8;
 
   font-weight:bold;
+
 }
 
 .timer{
+
   color:#67e8f9;
 
   font-weight:bold;
+
 }
 
 .timer.danger{
+
   color:#fb7185;
+
 }
 
 .progress{
+
   width:100%;
 
   height:8px;
 
   background:
-    rgba(255,255,255,.1);
+  rgba(255,255,255,.1);
 
   border-radius:20px;
 
   overflow:hidden;
 
   margin-bottom:25px;
+
 }
 
 .progress-bar{
+
   height:100%;
 
   width:0%;
 
   background:
-    linear-gradient(
-      90deg,
-      #22d3ee,
-      #8b5cf6,
-      #ec4899
-    );
+
+  linear-gradient(
+    90deg,
+    #22d3ee,
+    #8b5cf6,
+    #ec4899
+  );
 
   transition:.3s;
+
 }
 
 .question{
+
   font-size:22px;
 
   font-weight:bold;
@@ -405,19 +578,28 @@ header{
   line-height:1.55;
 
   margin:20px 0;
+
 }
 
-/* RESULT */
+
+/* ==========================================
+   RESULT
+========================================== */
 
 .result{
+
   text-align:center;
+
 }
 
 .result-icon{
+
   font-size:55px;
+
 }
 
 .score{
+
   font-size:60px;
 
   font-weight:900;
@@ -425,25 +607,30 @@ header{
   margin:15px;
 
   background:
-    linear-gradient(
-      90deg,
-      #22d3ee,
-      #a78bfa,
-      #f472b6
-    );
+
+  linear-gradient(
+    90deg,
+    #22d3ee,
+    #a78bfa,
+    #f472b6
+  );
 
   -webkit-background-clip:text;
 
   color:transparent;
+
 }
 
 .result p{
+
   color:#aaa9c8;
 
   line-height:1.6;
+
 }
 
 .primary{
+
   display:inline-block;
 
   margin-top:22px;
@@ -453,11 +640,12 @@ header{
   border-radius:13px;
 
   background:
-    linear-gradient(
-      90deg,
-      #7c3aed,
-      #ec4899
-    );
+
+  linear-gradient(
+    90deg,
+    #7c3aed,
+    #ec4899
+  );
 
   color:white;
 
@@ -468,11 +656,70 @@ header{
   font-weight:bold;
 
   font-size:14px;
+
 }
 
-/* CHALLENGE */
+.primary:hover{
+
+  transform:
+  translateY(-2px);
+
+}
+
+
+/* ==========================================
+   SETTINGS
+========================================== */
+
+.settings{
+
+  margin-top:25px;
+
+  padding-top:20px;
+
+  border-top:
+  1px solid
+  rgba(255,255,255,.1);
+
+}
+
+.reset{
+
+  margin-top:15px;
+
+  padding:12px 15px;
+
+  border-radius:12px;
+
+  background:
+  rgba(251,113,133,.1);
+
+  border:
+  1px solid
+  rgba(251,113,133,.3);
+
+  color:#fda4af;
+
+  cursor:pointer;
+
+  font-weight:bold;
+
+}
+
+.reset:hover{
+
+  background:
+  rgba(251,113,133,.2);
+
+}
+
+
+/* ==========================================
+   CHALLENGE
+========================================== */
 
 .challenge{
+
   margin-top:70px;
 
   padding:30px;
@@ -482,62 +729,84 @@ header{
   text-align:center;
 
   background:
-    linear-gradient(
-      110deg,
-      rgba(34,211,238,.10),
-      rgba(139,92,246,.13),
-      rgba(236,72,153,.1)
-    );
+
+  linear-gradient(
+    110deg,
+    rgba(34,211,238,.10),
+    rgba(139,92,246,.13),
+    rgba(236,72,153,.1)
+  );
 
   border:
-    1px solid rgba(255,255,255,.1);
+  1px solid
+  rgba(255,255,255,.1);
+
 }
 
 .challenge h2{
+
   margin-bottom:10px;
+
 }
 
 .challenge p{
+
   color:#aaa9c8;
+
   line-height:1.6;
+
 }
 
-/* FOOTER */
+
+/* ==========================================
+   FOOTER
+========================================== */
 
 footer{
+
   margin-top:80px;
 
   padding:38px 0;
 
   border-top:
-    1px solid rgba(255,255,255,.1);
+  1px solid
+  rgba(255,255,255,.1);
+
 }
 
 .footer{
+
   display:flex;
 
   justify-content:
-    space-between;
+  space-between;
 
   align-items:center;
 
   gap:20px;
+
 }
 
 .footer-brand{
+
   font-size:20px;
+
   font-weight:900;
+
 }
 
 .footer-note{
+
   color:#aaa9c8;
 
   font-size:12px;
 
   margin-top:7px;
+
 }
 
 .tiktok{
+
   color:white;
 
   text-decoration:none;
@@ -547,65 +816,106 @@ footer{
   border-radius:13px;
 
   background:
-    rgba(255,255,255,.06);
+  rgba(255,255,255,.06);
 
   border:
-    1px solid rgba(255,255,255,.1);
+  1px solid
+  rgba(255,255,255,.1);
 
   font-weight:bold;
+
+  transition:.2s;
+
 }
 
-/* MOBILE */
+.tiktok:hover{
+
+  transform:
+  translateY(-2px);
+
+  background:
+  rgba(255,255,255,.11);
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media(max-width:750px){
 
   .subjects{
+
     grid-template-columns:1fr;
+
   }
 
   .hero{
+
     padding-top:55px;
+
   }
 
   .hero h1{
+
     letter-spacing:-3px;
+
   }
 
   .footer{
+
     flex-direction:column;
 
     align-items:flex-start;
+
   }
 
   .panel{
+
     padding:23px;
+
   }
 
   .question{
+
     font-size:19px;
+
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- HEADER -->
+<!-- ==========================================
+     HEADER
+========================================== -->
 
 <header>
 
 <div class="container nav">
 
 <div class="logo">
+
 QWUİZY
+
 </div>
 
+
 <div class="profile">
-⚡ XP: <span id="xp">0</span>
+
+⚡ XP:
+
+<span id="xp">
+0
+</span>
+
 </div>
 
 </div>
@@ -614,7 +924,9 @@ QWUİZY
 
 
 
-<!-- HOME -->
+<!-- ==========================================
+     HOME
+========================================== -->
 
 <main id="home">
 
@@ -624,13 +936,21 @@ QWUİZY
 <div class="container">
 
 <h1>
+
 Biliyini<br>
+
 oyuna çevir.
+
 </h1>
 
+
 <p>
+
 Azərbaycan dilində maraqlı və düşündürücü testlər.
-Səviyyəni yüksəlt, XP topla və öz rekordunu qır.
+
+Səviyyəni yüksəlt,
+XP topla və öz rekordunu qır.
+
 </p>
 
 </div>
@@ -639,9 +959,10 @@ Səviyyəni yüksəlt, XP topla və öz rekordunu qır.
 
 
 
-<section id="subjectsSection">
+<section>
 
 <div class="container">
+
 
 <div class="section-title">
 
@@ -660,6 +981,8 @@ Testə başlamaq üçün bir fənn seç.
 <div class="subjects">
 
 
+<!-- RIYAZIYYAT -->
+
 <div
 class="card math"
 onclick="selectSubject('riyaziyyat')"
@@ -674,7 +997,8 @@ Riyaziyyat
 </h3>
 
 <p>
-Funksiyalar, tənliklər, məntiq və daha çox.
+Funksiyalar, tənliklər,
+məntiq və daha çox.
 </p>
 
 <div class="card-label">
@@ -684,6 +1008,8 @@ TESTƏ BAŞLA →
 </div>
 
 
+
+<!-- FIZIKA -->
 
 <div
 class="card physics"
@@ -699,7 +1025,8 @@ Fizika
 </h3>
 
 <p>
-Mexanika, qüvvə, enerji və digər mövzular.
+Mexanika, qüvvə,
+enerji və digər mövzular.
 </p>
 
 <div class="card-label">
@@ -709,6 +1036,8 @@ TESTƏ BAŞLA →
 </div>
 
 
+
+<!-- ENGLISH -->
 
 <div
 class="card english"
@@ -724,7 +1053,8 @@ English
 </h3>
 
 <p>
-Grammar, vocabulary, reading və daha çox.
+Grammar, vocabulary,
+reading və daha çox.
 </p>
 
 <div class="card-label">
@@ -736,13 +1066,9 @@ START TEST →
 
 </div>
 
-</div>
-
-</section>
 
 
-
-<section class="container">
+<section>
 
 <div class="challenge">
 
@@ -751,9 +1077,18 @@ START TEST →
 </h2>
 
 <p>
+
 Hər gün öz rekordunu qır.
-Gələcək versiyada gündəlik missiyalar və streak sistemi də olacaq.
+
+Daha çox sual həll et,
+daha çox XP qazan.
+
 </p>
+
+</div>
+
+</section>
+
 
 </div>
 
@@ -764,29 +1099,40 @@ Gələcək versiyada gündəlik missiyalar və streak sistemi də olacaq.
 
 
 
-<!-- SELECTION -->
+<!-- ==========================================
+     SELECTION
+========================================== -->
 
 <div
 id="selection"
 class="panel hidden"
 >
 
+
 <span
 class="back"
 onclick="goHome()"
 >
+
 ← Geri
+
 </span>
+
 
 <h2 id="subjectTitle">
 Fənn
 </h2>
 
+
 <br>
 
+
 <p style="color:#aaa9c8">
+
 🎓 Sinif seç
+
 </p>
+
 
 
 <div class="options">
@@ -795,73 +1141,125 @@ Fənn
 class="option"
 onclick="selectClass('11')"
 >
+
 11-ci sinif
+
 </button>
 
 </div>
+
 
 
 <br>
 
 
 <p style="color:#aaa9c8">
+
 🧠 Çətinlik səviyyəsi
+
 </p>
 
 
+
 <div class="options">
+
 
 <button
 class="option"
 onclick="startTest('medium')"
 >
+
 🟡 Medium
+
 </button>
+
 
 <button
 class="option"
 onclick="startTest('hard')"
 >
+
 🟠 Hard
+
 </button>
+
 
 <button
 class="option"
 onclick="startTest('expert')"
 >
+
 🔴 Expert
+
+</button>
+
+
+</div>
+
+
+
+<!-- SETTINGS -->
+
+<div class="settings">
+
+<p style="color:#aaa9c8">
+
+⚙️ Test parametrləri
+
+</p>
+
+
+<button
+class="reset"
+onclick="resetHistory()"
+>
+
+🗑️ Test tarixçəsini sıfırla
+
 </button>
 
 </div>
 
+
 </div>
 
 
 
-<!-- QUIZ -->
+<!-- ==========================================
+     QUIZ
+========================================== -->
 
 <div
 id="quiz"
 class="panel hidden"
 >
 
+
 <div class="quiz-top">
+
 
 <div
 id="questionNumber"
 class="question-number"
 >
+
 1 / 15
+
 </div>
+
 
 <div
-class="timer"
 id="timer"
+class="timer"
 >
+
 ⏱️ 180s
-</div>
 
 </div>
+
+
+</div>
+
 
 
 <div class="progress">
@@ -874,40 +1272,56 @@ class="progress-bar"
 </div>
 
 
+
 <div
 id="question"
 class="question"
 >
+
 Sual yüklənir...
+
 </div>
+
 
 
 <div
 id="answers"
 class="options"
 >
-</div>
 
 </div>
 
 
+</div>
 
-<!-- RESULT -->
+
+
+<!-- ==========================================
+     RESULT
+========================================== -->
 
 <div
 id="resultPanel"
 class="panel hidden"
 >
 
+
 <div class="result">
 
+
 <div class="result-icon">
+
 🎉
+
 </div>
 
+
 <h2>
+
 Test tamamlandı!
+
 </h2>
+
 
 <div class="score">
 
@@ -919,39 +1333,55 @@ Test tamamlandı!
 
 </div>
 
+
 <p id="resultText">
 </p>
+
 
 <button
 class="primary"
 onclick="goHome()"
 >
+
 🏠 Ana səhifə
+
 </button>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- FOOTER -->
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
 
 <footer>
 
 <div class="container footer">
 
+
 <div>
 
+
 <div class="footer-brand">
+
 QWUİZY
+
 </div>
+
 
 <div class="footer-note">
+
 İrad və ya tövsiyyələr üçün əlaqə:
-</div>
 
 </div>
+
+
+</div>
+
 
 
 <a
@@ -960,8 +1390,11 @@ href="https://www.tiktok.com/@ssamirreds"
 target="_blank"
 rel="noopener noreferrer"
 >
+
 ♪ TikTok: ssamirreds ↗
+
 </a>
+
 
 </div>
 
@@ -973,11 +1406,9 @@ rel="noopener noreferrer"
 
 
 /* ==========================================
-   QWUİZY
+   GLOBAL VARIABLES
 ========================================== */
 
-
-/* DATA */
 
 let questions = {};
 
@@ -998,15 +1429,27 @@ let timeLeft = 180;
 let timerInterval;
 
 
-/* XP */
+/* ==========================================
+   XP
+========================================== */
 
-let xp =
-Number(
-localStorage.getItem("qwuizyXP")
+
+let xp = Number(
+localStorage.getItem(
+"qwuizyXP"
+)
 ) || 0;
 
 
-/* GÖRÜLMÜŞ SUALLAR */
+document.getElementById(
+"xp"
+).textContent = xp;
+
+
+/* ==========================================
+   SEEN QUESTIONS
+========================================== */
+
 
 let seenQuestions =
 JSON.parse(
@@ -1016,14 +1459,11 @@ localStorage.getItem(
 ) || {};
 
 
-document.getElementById("xp")
-.textContent = xp;
-
-
 
 /* ==========================================
-   QUESTIONS.JSON YÜKLƏ
+   LOAD QUESTIONS.JSON
 ========================================== */
+
 
 fetch("./questions.json")
 
@@ -1046,7 +1486,7 @@ return response.json();
 questions = data;
 
 console.log(
-"Qwuizy sual bazası uğurla yükləndi:",
+"Qwuizy sual bazası yükləndi:",
 questions
 );
 
@@ -1055,12 +1495,11 @@ questions
 .catch(error => {
 
 console.error(
-"SUALLAR YÜKLƏNMƏDI:",
 error
 );
 
 alert(
-"⚠️ Sual bazası yüklənmədi!\n\nGitHub-da questions.json faylının olduğuna əmin ol."
+"⚠️ Sual bazası yüklənmədi!\n\nquestions.json faylını yoxla."
 );
 
 });
@@ -1068,23 +1507,39 @@ alert(
 
 
 /* ==========================================
-   SUBJECT
+   SUBJECT SELECTION
 ========================================== */
+
 
 function selectSubject(selected){
 
 subject = selected;
 
+
+/* Əvvəlki seçimləri təmizlə */
+
+classLevel = "";
+
+difficulty = "";
+
+
 document.getElementById(
 "home"
-).classList.add("hidden");
+)
+.classList.add(
+"hidden"
+);
+
 
 document.getElementById(
 "selection"
-).classList.remove("hidden");
+)
+.classList.remove(
+"hidden"
+);
 
 
-let names = {
+const names = {
 
 riyaziyyat:
 "📐 Riyaziyyat",
@@ -1100,7 +1555,8 @@ english:
 
 document.getElementById(
 "subjectTitle"
-).textContent =
+)
+.textContent =
 names[selected];
 
 
@@ -1117,18 +1573,16 @@ behavior:"smooth"
    CLASS
 ========================================== */
 
+
 function selectClass(level){
 
-classLevel = String(level);
+classLevel =
+String(level);
+
 
 console.log(
-"Seçilmiş sinif:",
+"Sinif:",
 classLevel
-);
-
-console.log(
-"Seçilmiş fənn:",
-subject
 );
 
 }
@@ -1136,36 +1590,70 @@ subject
 
 
 /* ==========================================
-   SEEN KEY
+   IMPORTANT:
+   EACH DIFFICULTY HAS ITS OWN HISTORY
 ========================================== */
+
 
 function getSeenKey(){
 
 return (
+
 subject +
+
 "_" +
-classLevel
+
+classLevel +
+
+"_" +
+
+difficulty
+
 );
 
 }
 
 
 
+/*
+NÜMUNƏ:
+
+riyaziyyat_11_medium
+
+riyaziyyat_11_hard
+
+riyaziyyat_11_expert
+
+fizika_11_medium
+
+və s.
+
+Beləliklə səviyyələr
+bir-birinə qarışmır.
+*/
+
+
+
 /* ==========================================
-   AVAILABLE QUESTIONS
+   GET AVAILABLE QUESTIONS
 ========================================== */
+
 
 function getAvailableQuestions(bank){
 
 const key =
 getSeenKey();
 
+
 const seen =
 seenQuestions[key] || [];
 
 
 return bank.filter(
-q => !seen.includes(q.id)
+question =>
+!seen.includes(
+question.id
+)
 );
 
 }
@@ -1173,10 +1661,11 @@ q => !seen.includes(q.id)
 
 
 /* ==========================================
-   SAVE SEEN QUESTION
+   SAVE QUESTION AS SEEN
 ========================================== */
 
-function saveQuestionAsSeen(q){
+
+function saveQuestionAsSeen(question){
 
 const key =
 getSeenKey();
@@ -1190,19 +1679,67 @@ seenQuestions[key] = [];
 
 
 if(
-!seenQuestions[key].includes(q.id)
+!seenQuestions[key]
+.includes(
+question.id
+)
 ){
 
-seenQuestions[key].push(q.id);
+seenQuestions[key].push(
+question.id
+);
 
 }
 
 
 localStorage.setItem(
+
 "qwuizySeenQuestions",
+
 JSON.stringify(
 seenQuestions
 )
+
+);
+
+}
+
+
+
+/* ==========================================
+   RESET HISTORY
+========================================== */
+
+
+function resetHistory(){
+
+const confirmReset =
+confirm(
+
+"⚠️ Bütün test tarixçəsi silinsin?\n\n" +
+
+"Bu əməliyyatdan sonra əvvəllər həll etdiyin suallar yenidən çıxa bilər."
+
+);
+
+
+if(!confirmReset){
+
+return;
+
+}
+
+
+localStorage.removeItem(
+"qwuizySeenQuestions"
+);
+
+
+seenQuestions = {};
+
+
+alert(
+"✅ Test tarixçəsi sıfırlandı!"
 );
 
 }
@@ -1213,18 +1750,22 @@ seenQuestions
    START TEST
 ========================================== */
 
+
 function startTest(level){
 
-difficulty = level;
+difficulty =
+level;
 
 
-/* SINIF */
+/* DEFAULT CLASS */
 
 classLevel =
 String(
 classLevel || "11"
 );
 
+
+/* DEBUG */
 
 console.log(
 "Fənn:",
@@ -1242,7 +1783,7 @@ difficulty
 );
 
 
-/* SUAL BAZASINI YOXLA */
+/* CHECK SUBJECT */
 
 if(
 !questions ||
@@ -1257,6 +1798,8 @@ return;
 
 }
 
+
+/* CHECK CLASS */
 
 if(
 !questions[subject][classLevel]
@@ -1275,20 +1818,28 @@ let bank =
 questions[subject][classLevel];
 
 
-/* GÖRÜLMƏMİŞ SUALLAR */
+/* AVAILABLE */
 
 let available =
-getAvailableQuestions(bank);
+getAvailableQuestions(
+bank
+);
 
 
-/* HAMISI BİTİBSƏ */
+/* ALL QUESTIONS USED */
 
 if(
 available.length === 0
 ){
 
 alert(
-"🎉 Təbriklər!\n\nBu bölmədəki bütün sualları artıq həll etmisən!"
+
+"🎉 Təbriklər!\n\n" +
+
+"Bu fənn və səviyyədəki bütün sualları artıq həll etmisən!\n\n" +
+
+"İstəsən test tarixçəsini sıfırlaya bilərsən."
+
 );
 
 return;
@@ -1296,28 +1847,33 @@ return;
 }
 
 
-/* ÇƏTİNLİYƏ GÖRƏ */
+/* DIFFICULTY */
 
 let filtered =
 available.filter(
-q =>
-q.difficulty === difficulty
+question =>
+question.difficulty ===
+difficulty
 );
 
 
-/* 15 DƏNƏ YOXDURSA
-BAŞQA GÖRÜLMƏMİŞ SUALLAR */
+/*
+Əgər həmin səviyyədə
+15 sual yoxdursa,
+mövcud digər suallardan istifadə edirik.
+*/
 
 if(
 filtered.length < 15
 ){
 
-filtered = available;
+filtered =
+available;
 
 }
 
 
-/* RANDOM */
+/* RANDOM SHUFFLE */
 
 filtered =
 [...filtered];
@@ -1332,7 +1888,7 @@ i > 0;
 i--
 ){
 
-let j =
+const j =
 Math.floor(
 Math.random() *
 (i + 1)
@@ -1351,7 +1907,7 @@ filtered[i]
 }
 
 
-/* 15 SUAL */
+/* 15 QUESTIONS */
 
 testQuestions =
 filtered.slice(
@@ -1360,25 +1916,29 @@ filtered.slice(
 );
 
 
-/* BAŞLA */
+/* RESET */
 
 currentQuestion = 0;
 
 score = 0;
 
 
-/* EKRAN */
+/* SHOW QUIZ */
 
 document.getElementById(
 "selection"
 )
-.classList.add("hidden");
+.classList.add(
+"hidden"
+);
 
 
 document.getElementById(
 "quiz"
 )
-.classList.remove("hidden");
+.classList.remove(
+"hidden"
+);
 
 
 window.scrollTo({
@@ -1397,6 +1957,7 @@ showQuestion();
    SHOW QUESTION
 ========================================== */
 
+
 function showQuestion(){
 
 clearInterval(
@@ -1407,7 +1968,7 @@ timerInterval
 timeLeft = 180;
 
 
-let timer =
+const timer =
 document.getElementById(
 "timer"
 );
@@ -1424,8 +1985,11 @@ timer.classList.remove(
 );
 
 
+/* TIMER */
+
 timerInterval =
-setInterval(()=>{
+setInterval(
+()=>{
 
 
 timeLeft--;
@@ -1456,16 +2020,23 @@ clearInterval(
 timerInterval
 );
 
-nextQuestion(-1);
+
+nextQuestion(
+-1
+);
 
 }
 
 
-},1000);
+},
+1000
+);
 
 
 
-let q =
+/* QUESTION */
+
+const q =
 testQuestions[
 currentQuestion
 ];
@@ -1475,18 +2046,26 @@ document.getElementById(
 "questionNumber"
 )
 .textContent =
+
 `${currentQuestion + 1} / ${testQuestions.length}`;
 
+
+
+/* PROGRESS */
 
 document.getElementById(
 "progressBar"
 )
 .style.width =
+
 `${(
-currentQuestion /
+(currentQuestion + 1) /
 testQuestions.length
 ) * 100}%`;
 
+
+
+/* TEXT */
 
 document.getElementById(
 "question"
@@ -1495,7 +2074,10 @@ document.getElementById(
 q.question;
 
 
-let answers =
+
+/* ANSWERS */
+
+const answers =
 document.getElementById(
 "answers"
 );
@@ -1508,7 +2090,7 @@ q.answers.forEach(
 (answer,index)=>{
 
 
-let button =
+const button =
 document.createElement(
 "button"
 );
@@ -1524,7 +2106,9 @@ answer;
 
 button.onclick =
 ()=>{
-nextQuestion(index);
+nextQuestion(
+index
+);
 };
 
 
@@ -1542,6 +2126,7 @@ button
    NEXT QUESTION
 ========================================== */
 
+
 function nextQuestion(answer){
 
 clearInterval(
@@ -1549,24 +2134,28 @@ timerInterval
 );
 
 
-let q =
+const q =
 testQuestions[
 currentQuestion
 ];
 
 
-/* YADDA SAXLA */
+/* SAVE ONLY THE QUESTION
+   FROM CURRENT DIFFICULTY */
 
-saveQuestionAsSeen(q);
+saveQuestionAsSeen(
+q
+);
 
 
-/* DÜZGÜN CAVAB */
+/* CORRECT */
 
 if(
 answer === q.correct
 ){
 
 score++;
+
 
 xp += 10;
 
@@ -1586,12 +2175,12 @@ xp;
 }
 
 
-/* NÖVBƏTİ */
+/* NEXT */
 
 currentQuestion++;
 
 
-/* TEST BİTDİ */
+/* FINISH */
 
 if(
 currentQuestion >=
@@ -1605,7 +2194,7 @@ return;
 }
 
 
-/* YENİ SUAL */
+/* SHOW */
 
 showQuestion();
 
@@ -1617,6 +2206,7 @@ showQuestion();
    FINISH TEST
 ========================================== */
 
+
 function finishTest(){
 
 clearInterval(
@@ -1627,130 +2217,4 @@ timerInterval
 document.getElementById(
 "quiz"
 )
-.classList.add("hidden");
-
-
-document.getElementById(
-"resultPanel"
-)
-.classList.remove("hidden");
-
-
-document.getElementById(
-"score"
-)
-.textContent =
-score;
-
-
-let total =
-testQuestions.length;
-
-
-let percent =
-Math.round(
-(score / total) * 100
-);
-
-
-let message;
-
-
-if(
-percent >= 90
-){
-
-message =
-"🔥 Möhtəşəm nəticə! Sən həqiqətən güclüsən.";
-
-}
-
-else if(
-percent >= 70
-){
-
-message =
-"💪 Çox yaxşı! Bir az da məşq et və daha yüksək nəticə al.";
-
-}
-
-else if(
-percent >= 50
-){
-
-message =
-"📈 Pis deyil! Daha çox məşq etsən nəticən artacaq.";
-
-}
-
-else{
-
-message =
-"🧠 Təslim olma! Səhvlərini öyrən və yenidən cəhd et.";
-
-}
-
-
-document.getElementById(
-"resultText"
-)
-.textContent =
-`${message} ${score * 10} XP qazandın!`;
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-
-/* ==========================================
-   HOME
-========================================== */
-
-function goHome(){
-
-clearInterval(
-timerInterval
-);
-
-
-document.getElementById(
-"selection"
-)
-.classList.add("hidden");
-
-
-document.getElementById(
-"quiz"
-)
-.classList.add("hidden");
-
-
-document.getElementById(
-"resultPanel"
-)
-.classList.add("hidden");
-
-
-document.getElementById(
-"home"
-)
-.classList.remove("hidden");
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-</script>
-
-</body>
-</html>
+.cla
